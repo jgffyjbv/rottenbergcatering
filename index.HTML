@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium Catering Services - Shabbos Menus, Linen Colors, and more. Elegant catering for all occasions.">
+    <title>Golden Spoons Catering | Premium Kosher Catering</title>
+    <style>
+        :root {
+            --cream: #FFFDF7;
+            --warm-white: #FFF9F0;
+            --gold: #C8963E;
+            --gold-light: #E8D5B7;
+            --gold-pale: #F7EFE2;
+            --charcoal: #3A3A3A;
+            --text: #4A4A4A;
+            --text-light: #6B6B6B;
+            --border: #E8DDD0;
+            --card-bg: #FFFFFF;
+            --accent: #A0522D;
+            --accent-light: #FDF5ED;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.10);
+            --radius-sm: 8px;
+            --radius: 14px;
+            --radius-lg: 20px;
+            --transition: 0.25s ease;
+            --font-heading: 'Georgia', 'Times New Roman', serif;
+            --font-body: 'Segoe UI', 'Helvetica Neue', 'Arial', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ─── NAVIGATION ────────────────────── */
+        .nav-bar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 253, 247, 0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            min-height: 60px;
+            box-shadow: var(--shadow-sm);
+        }
+        .nav-bar a {
+            display: inline-block;
+            padding: 10px 18px;
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-radius: 30px;
+            transition: var(--transition);
+            white-space: nowrap;
+            letter-spacing: 0.01em;
+            border: 1px solid transparent;
+        }
+        .nav-bar a:hover,
+        .nav-bar a:focus-visible {
+            background: var(--gold-pale);
+            color: var(--accent);
+            border-color: var(--gold-light);
+            outline: none;
+        }
+        .nav-bar a.nav-cta {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
+            border-color: var(--accent);
+            padding: 10px 22px;
+        }
+        .nav-bar a.nav-cta:hover {
+            background: #8B3E1F;
+            border-color: #8B3E1F;
+            color: #fff;
+        }
+
+        /* ─── HERO ──────────────────────────── */
+        .hero {
+            text-align: center;
+            padding: 70px 24px 55px;
+            background: linear-gradient(180deg, #FFFDF7 0%, #FDF5ED 40%, #F9ECD9 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle, rgba(200, 150, 62, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -30px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(160, 82, 45, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        .hero-icon {
+            font-size: 3.2rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.4rem, 5vw, 3.6rem);
+            color: var(--charcoal);
+            letter-spacing: -0.01em;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+        .hero h1 span {
+            color: var(--accent);
+            font-weight: 700;
+        }
+        .hero .tagline {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            margin-bottom: 6px;
+            letter-spacing: 0.03em;
+        }
+        .hero .sub-tagline {
+            font-size: 0.95rem;
+            color: #999;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        /* ─── SECTION STYLES ────────────────── */
+        .section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-title h2 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--charcoal);
+            letter-spacing: -0.01em;
+            margin-bottom: 6px;
+            font-weight: 400;
+        }
+        .section-title .accent-line {
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--gold);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        .section-subtitle {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        /* ─── CARDS ─────────────────────────── */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 32px 28px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+        }
+        .card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            color: var(--accent);
+            margin-bottom: 16px;
+            letter-spacing: 0.02em;
+            font-weight: 400;
+            border-bottom: 1px solid var(--gold-pale);
+            padding-bottom: 10px;
+        }
+        .card h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #999;
+            margin: 16px 0 8px;
+            font-weight: 600;
+        }
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .card ul li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.98rem;
+            color: var(--text);
+            letter-spacing: 0.01em;
+        }
+        .card ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 1.1rem;
+            line-height: 1;
+            top: 6px;
+        }
+        .card .price-note {
+            display: inline-block;
+            background: var(--gold-pale);
+            color: var(--accent);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: 0.02em;
+        }
+        .card .note {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-style: italic;
+            margin-top: 10px;
+            padding-top: 8px;
+            border-top: 1px dotted var(--border);
+        }
+
+        /* ─── TWO COLUMN LAYOUT ─────────────── */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        @media (max-width: 700px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ─── COLOR SWATCH GRID ─────────────── */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+            gap: 12px;
+        }
+        .color-swatch {
+            text-align: center;
+            background: #fff;
+            border-radius: var(--radius-sm);
+            padding: 14px 8px 10px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            cursor: default;
+        }
+        .color-swatch:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        .color-swatch .dot {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 0 auto 8px;
+            border: 2px solid #eee;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.10);
+        }
+        .color-swatch .name {
+            font-size: 0.72rem;
+            color: var(--text-light);
+            letter-spacing: 0.02em;
+            line-height: 1.3;
+            word-break: break-word;
+        }
+        .color-column-label {
+            grid-column: 1 / -1;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #aaa;
+            margin: 10px 0 4px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border);
+        }
+        .color-column-label:first-child {
+            border-top: none;
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        /* ─── CONTACT SECTION ───────────────── */
+        .contact-section {
+            background: var(--charcoal);
+            color: #ddd;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .contact-section h2 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        .contact-section .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        .contact-section .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            color: #ccc;
+        }
+        .contact-section .contact-item .icon {
+            font-size: 1.4rem;
+        }
+        .contact-section a {
+            color: var(--gold-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .contact-section a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .contact-section .footer-note {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 16px;
+            letter-spacing: 0.03em;
+        }
+
+        /* ─── BACK TO TOP ───────────────────── */
+        .back-to-top {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 999;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1.3rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            background: #8B3E1F;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-3px);
+        }
+
+        /* ─── RESPONSIVE ────────────────────── */
+        @media (max-width: 600px) {
+            .nav-bar {
+                gap: 4px;
+                padding: 6px 10px;
+            }
+            .nav-bar a {
+                padding: 8px 12px;
+                font-size: 0.78rem;
+                border-radius: 20px;
+            }
+            .hero {
+                padding: 45px 16px 35px;
+            }
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            .section {
+                padding: 35px 14px;
+            }
+            .card {
+                padding: 20px 16px;
+            }
+            .color-grid {
+                grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+                gap: 8px;
+            }
+            .color-swatch .dot {
+                width: 30px;
+                height: 30px;
+            }
+            .color-swatch .name {
+                font-size: 0.65rem;
+            }
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ─── PRINT STYLES ──────────────────── */
+        @media print {
+            .nav-bar,
+            .back-to-top {
+                display: none;
+            }
+            body {
+                background: #fff;
+                color: #000;
+            }
+            .card {
+                box-shadow: none;
+                border: 1px solid #ccc;
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════ NAVIGATION ═══════════════ -->
+    <nav class="nav-bar" aria-label="Page navigation">
+        <a href="#hero">Home</a>
+        <a href="#shabbos-menu">Shabbos Menu</a>
+        <a href="#color-chart">Color Chart</a>
+        <a href="#collections">Collections</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <header class="hero" id="hero">
+        <div class="hero-content">
+            <span class="hero-icon">🍽️</span>
+            <h1>Golden <span>Spoons</span> Catering</h1>
+            <p class="tagline">Premium Kosher Catering for Shabbos, Simchas &amp; Events</p>
+            <p class="sub-tagline">Elegant • Heimish • Unforgettable</p>
+        </div>
+    </header>
+
+    <!-- ═══════════════ SHABBOS MENU ═══════════════ -->
+    <section class="section" id="shabbos-menu">
+        <div class="section-title">
+            <h2>Shabbos Menus</h2>
+            <span class="accent-line"></span>
+        </div>
+        <p class="section-subtitle">Heimish Challos available upon request</p>
+
+        <!-- OPTION 1 -->
+        <div class="card">
+            <span class="price-note">Option #1 — Standard</span>
+            <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:14px;">Price: Per Meat &amp; Cheese</p>
+
+            <div class="two-col">
+                <!-- Night Meal -->
+                <div>
+                    <h4>🌙 Night Meal</h4>
+                    <ul>
+                        <li>Salmon Fish &amp; Gefilte</li>
+                        <li>Soup with Knaidlech &amp; Luckyshen</li>
+                        <li>Chic Peas &amp; Radish</li>
+                        <li>Breaded or Baked Chicken</li>
+                        <li>Potato Kugel, Farfel &amp; Tzimmes</li>
+                        <li>Dessert — Compot, Ice Cream or Sorbet</li>
+                        <li>Tomato Dip, Chrein, Pickles, Coleslaw</li>
+                    </ul>
+                </div>
+                <!-- Day Meal -->
+                <div>
+                    <h4>☀️ Day Meal</h4>
+                    <ul>
+                        <li>Salmon Fish &amp; Gefilte</li>
+                        <li>Eggs, Liver, Vegetables</li>
+                        <li>Chicken Cholent w/ Kishka</li>
+                        <li>Potato &amp; Luckyshen Kugel</li>
+                        <li>Assorted Cold Cuts</li>
+                        <li>Dessert — Compot, Ice Cream, Sorbet</li>
+                        <li>Tomato Dip, Chrein, Pickles, Coleslaw</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="note">Want to upgrade only 1 or 2 courses? Ask for separate upgrade prices.</p>
+        </div>
+
+        <!-- OPTION 2 -->
+        <div class="card">
+            <span class="price-note">Option #2 — Upgraded</span>
+            <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:14px;">Price: Per Meal &amp; Cheese</p>
+
+            <div class="two-col">
+                <!-- Night Meal -->
+                <div>
+                    <h4>🌙 Night Meal</h4>
+                    <ul>
+                        <li>Individual 3-Section Dip Plate</li>
+                        <li>Salmon &amp; Gefilte with Spiral Beets &amp; Chrein — Chinese Spoon</li>
+                        <li>Soup in Crock w/ Knaidlech &amp; Luckyshen</li>
+                        <li>Onion Kugel, Chic Peas, Radish</li>
+                        <li>Capons or Chicken Rib Steak</li>
+                        <li>Individual Potato &amp; Luckyshen Kugel</li>
+                        <li>Piped Farfel &amp; Stem Carrots</li>
+                        <li>Dessert — Apple Cobbler, Rosette</li>
+                        <li>Ice Cream with Strawberry Sauce</li>
+                        <li style="color:#999;">(Other dessert options available)</li>
+                    </ul>
+                </div>
+                <!-- Day Meal -->
+                <div>
+                    <h4>☀️ Day Meal</h4>
+                    <ul>
+                        <li>Individual 3-Section Dip Plate</li>
+                        <li>Grilled Salmon, Fried Angel Hair Pasta &amp; Gefilte</li>
+                        <li>4-Section Egg Plate — Eggs, Chopped Liver, Sautéed Liver, Tomato Salad &amp; Garnishing</li>
+                        <li>Cholent in Crocks w/ Beef (optional) &amp; Kishka</li>
+                        <li>Assorted Cold Cuts</li>
+                        <li>Dessert — Sorbet Block &amp; Strawberry Sauce</li>
+                        <li style="color:#999;">(Other dessert options available)</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="note">
+                🥤 Drinks included: Soda, Seltzer, Water &amp; Ice.<br>
+                🍷 Grape Juice &amp; Wine <strong>not</strong> included.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════ COLOR CHART ═══════════════ -->
+    <section class="section" id="color-chart">
+        <div class="section-title">
+            <h2>Linen &amp; Napkin Color Chart</h2>
+            <span class="accent-line"></span>
+        </div>
+        <p class="section-subtitle">100% Polyester — Basic Polyester Collection</p>
+
+        <div class="card" style="padding: 28px 20px;">
+            <div class="color-grid">
+
+                <!-- LEFT COLUMN: Warm & Earth Tones -->
+                <div class="color-column-label">Warm &amp; Earth Tones</div>
+                <div class="color-swatch"><div class="dot" style="background:#FFFFF0;"></div><span class="name">Ivory</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#D2B48C;"></div><span class="name">Tan</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#FFC30B;"></div><span class="name">Honey</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#C19A6B;"></div><span class="name">Camel</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#8B7D5E;"></div><span class="name">Camo</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#8B7D5E;"></div><span class="name">Camo</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#FBEC5D;"></div><span class="name">Maize</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#FFF700;"></div><span class="name">Lemon</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#DAA520;"></div><span class="name">Goldenrod</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#CC0000;"></div><span class="name">Red</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#FFD700;"></div><span class="name">Gold</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#B0BF1A;"></div><span class="name">Acid Green</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#388E3C;"></div><span class="name">Green</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#6F4E37;"></div><span class="name">Café</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#C49A6C;"></div><span class="name">Toast</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#4B5320;"></div><span class="name">Army Green</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#808000;"></div><span class="name">Olive</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#E0F7FA;"></div><span class="name">Ice</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#F5DEB3;"></div><span class="name">Beach</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#FFCBA4;"></div><span class="name">Peach</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#FF7F50;"></div><span class="name">Coral</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#FFA500;"></div><span class="name">Orange</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#FF5F1F;"></div><span class="name">Neon Orange</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#B87333;"></div><span class="name">Copper</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#CC5500;"></div><span class="name">Burnt Orange</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#E2725B;"></div><span class="name">Terra-Cotta</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#CB4154;"></div><span class="name">Brick</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#7B3F00;"></div><span class="name">Chocolate</span></div>
+
+                <!-- MIDDLE COLUMN: Greens & Blues -->
+                <div class="color-column-label">Greens &amp; Blues</div>
+                <div class="color-swatch"><div class="dot" style="background:#98FF98;"></div><span class="name">Mint</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#354A21;"></div><span class="name">Seaweed</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#BCB88A;"></div><span class="name">Sage</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#00FFFF;"></div><span class="name">Aqua</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#40E0D0;"></div><span class="name">Turquoise</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#00A86B;"></div><span class="name">Jade</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#008080;"></div><span class="name">Teal</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#32CD32;"></div><span class="name">Lime</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#39FF14;"></div><span class="name">Neon Green</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#4CBB17;"></div><span class="name">Kelly</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#50C878;"></div><span class="name">Emerald</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#8A9A5B;"></div><span class="name">Moss</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#355E3B;"></div><span class="name">Hunter</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#228B22;"></div><span class="name">Forest</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#ADD8E6;"></div><span class="name">Light Blue</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#006994;"></div><span class="name">Sea Blue</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#4682B4;"></div><span class="name">State</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#4169E1;"></div><span class="name">Royal</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#000080;"></div><span class="name">Navy</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#191970;"></div><span class="name">Midnight</span></div>
+
+                <!-- RIGHT COLUMN: Pinks, Purples & Neutrals -->
+                <div class="color-column-label">Pinks, Purples &amp; Neutrals</div>
+                <div class="color-swatch"><div class="dot" style="background:#FFB6C1;"></div><span class="name">Light Pink</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#FFB3DE;"></div><span class="name">Pink Balloon</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#FF69B4;"></div><span class="name">Daisy's Rose</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#E0B0FF;"></div><span class="name">Mauve</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#FF69B4;"></div><span class="name">Hot Pink</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#FC6C85;"></div><span class="name">Watermelon</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#E30B5C;"></div><span class="name">Raspberry</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#3D0734;"></div><span class="name">Aubergine</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#800020;"></div><span class="name">Burgundy</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#DC143C;"></div><span class="name">Holiday Red</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#C8A2C8;"></div><span class="name">Lilac</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#8E4585;"></div><span class="name">Plum</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#800080;"></div><span class="name">Purple</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#C0C0C0;"></div><span class="name">Silver</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#36454F;"></div><span class="name">Charcoal</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#000000;"></div><span class="name">Black</span></div>
+                <div class="color-swatch"><div class="dot" style="background:#FFFFFF;"></div><span class="name">White</span></div>
+            </div>
+            <p class="note" style="text-align:center;margin-top:16px;">
+                All colors shown are approximate digital representations.<br>
+                Actual fabric swatches available for viewing upon request.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════ COLLECTIONS ═══════════════ -->
+    <section class="section" id="collections">
+        <div class="section-title">
+            <h2>Our Collections</h2>
+            <span class="accent-line"></span>
+        </div>
+        <div class="card" style="text-align:center;">
+            <h3>🌿 Bark Collection</h3>
+            <p style="color:var(--text-light);">A premium selection of textured linen designs inspired by natural bark patterns. Available in a range of complementary colors to match any event palette.</p>
+            <p class="note">Inquire for swatch samples and availability.</p>
+        </div>
+        <div class="card" style="text-align:center;">
+            <h3>📋 Weekday Menu</h3>
+            <p style="color:var(--text-light);">Custom weekday catering menus are available for corporate events, family gatherings, and simchas. Tailored to your needs — from light brunches to full multi-course meals.</p>
+            <p class="note">Contact us to discuss your weekday event requirements.</p>
+        </div>
+    </section>
+
+    <!-- ═══════════════ CONTACT ═══════════════ -->
+    <section class="contact-section" id="contact">
+        <h2>Get in Touch</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <span class="icon">📞</span>
+                <span><a href="tel:+1234567890">(123) 456-7890</a></span>
+            </div>
+            <div class="contact-item">
+                <span class="icon">✉️</span>
+                <span><a href="mailto:info@goldenspoonscatering.com">info@goldenspoonscatering.com</a></span>
+            </div>
+            <div class="contact-item">
+                <span class="icon">📍</span>
+                <span>Available for events in the Tri-State area</span>
+            </div>
+        </div>
+        <p style="color:#aaa;max-width:500px;margin:0 auto 16px;">
+            For bookings, custom menus, or questions about our catering services, please call or email. We look forward to making your event special.
+        </p>
+        <div class="footer-note">
+            &copy; <span id="year"></span> Golden Spoons Catering. All rights reserved. &nbsp;|&nbsp; Heimish • Elegant • Kosher
+        </div>
+    </section>
+
+    <!-- ═══════════════ BACK TO TOP ═══════════════ -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+
+    <!-- ═══════════════ SCRIPTS ═══════════════ -->
+    <script>
+        // Update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Back to top button visibility
+        const backToTopBtn = document.getElementById('backToTop');
+
+        function toggleBackToTop() {
+            if (window.scrollY > 500) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        }
+
+        window.addEventListener('scroll', toggleBackToTop, { passive: true });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Initial check
+        toggleBackToTop();
+
+        // Highlight active nav link based on scroll position
+        const sections = document.querySelectorAll('section[id], header[id]');
+        const navLinks = document.querySelectorAll('.nav-bar a');
+
+        function updateActiveNav() {
+            let currentId = '';
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 120) {
+                    currentId = section.id;
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('nav-active');
+                if (link.getAttribute('href') === '#' + currentId) {
+                    link.classList.add('nav-active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNav, { passive: true });
+
+        // Add active style dynamically
+        const activeStyle = document.createElement('style');
+        activeStyle.textContent = `
+            .nav-bar a.nav-active {
+                background: var(--gold-pale);
+                color: var(--accent);
+                border-color: var(--gold-light);
+                font-weight: 600;
+            }
+        `;
+        document.head.appendChild(activeStyle);
+    </script>
+</body>
+</html>
