@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Rottenberg's Catering – Premium Kosher Catering for Shabbos, Weekday events & Simchas. Menus, linen colors, and more.">
     <title>Rottenberg's Catering | Kosher Catering</title>
+    <!-- Favicon: replace with your own icon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         :root {
             --cream: #FFFDF7;
@@ -343,33 +345,34 @@
         /* ─── COLOR SWATCH GRID ─────────────── */
         .color-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+            gap: 14px;
         }
         .color-swatch {
             text-align: center;
             background: #fff;
             border-radius: var(--radius-sm);
-            padding: 14px 8px 10px;
+            padding: 18px 8px 14px;
             box-shadow: var(--shadow-sm);
             border: 1px solid var(--border);
-            transition: var(--transition);
-            cursor: default;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
         }
         .color-swatch:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
             box-shadow: var(--shadow-md);
         }
         .color-swatch .dot {
-            width: 40px;
-            height: 40px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
-            margin: 0 auto 8px;
+            margin: 0 auto 10px;
             border: 2px solid #eee;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.10);
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.10);
+            transition: transform 0.2s ease;
         }
         .color-swatch .name {
-            font-size: 0.72rem;
+            font-size: 0.78rem;
             color: var(--text-light);
             letter-spacing: 0.02em;
             line-height: 1.3;
@@ -383,14 +386,70 @@
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: #aaa;
-            margin: 10px 0 4px;
-            padding-top: 10px;
+            margin: 12px 0 6px;
+            padding-top: 12px;
             border-top: 1px solid var(--border);
         }
         .color-column-label:first-of-type {
             border-top: none;
             margin-top: 0;
             padding-top: 0;
+        }
+
+        /* ─── COLOR MODAL ───────────────────── */
+        .color-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            backdrop-filter: blur(4px);
+        }
+        .color-modal.active {
+            display: flex;
+        }
+        .color-modal .modal-content {
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            max-width: 350px;
+            width: 90%;
+        }
+        .color-modal .big-dot {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 4px solid #eee;
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .color-modal .modal-name {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--charcoal);
+            margin-bottom: 20px;
+        }
+        .color-modal .close-btn {
+            margin-top: 20px;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 10px 28px;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .color-modal .close-btn:hover {
+            background: #8B3E1F;
         }
 
         /* ─── CONTACT SECTION ───────────────── */
@@ -504,22 +563,22 @@
                 padding: 20px 16px;
             }
             .color-grid {
-                grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
-                gap: 8px;
+                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+                gap: 10px;
             }
             .color-swatch .dot {
-                width: 30px;
-                height: 30px;
+                width: 40px;
+                height: 40px;
             }
             .color-swatch .name {
-                font-size: 0.65rem;
+                font-size: 0.7rem;
             }
             .two-col, .weekday-grid {
                 grid-template-columns: 1fr;
             }
         }
         @media print {
-            .nav-bar, .back-to-top { display: none; }
+            .nav-bar, .back-to-top, .color-modal { display: none; }
             body { background: #fff; color: #000; }
             .card { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
         }
@@ -732,96 +791,82 @@
             <h2>Linen &amp; Napkin Colors</h2>
             <span class="accent-line"></span>
         </div>
-        <p class="section-subtitle">100% Polyester – Basic Polyester Collection</p>
+        <p class="section-subtitle">100% Polyester – Basic Polyester Collection · Available colors only</p>
 
         <div class="card" style="padding: 28px 20px;">
             <div class="color-grid">
-                <div class="color-column-label">Warm &amp; Earth Tones</div>
-                <div class="color-swatch"><div class="dot" style="background:#FFFFF0;"></div><span class="name">Ivory</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#D2B48C;"></div><span class="name">Tan</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#FFC30B;"></div><span class="name">Honey</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#C19A6B;"></div><span class="name">Camel</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#8B7D5E;"></div><span class="name">Camo</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#8B7D5E;"></div><span class="name">Camo</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#FBEC5D;"></div><span class="name">Maize</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#FFF700;"></div><span class="name">Lemon</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#DAA520;"></div><span class="name">Goldenrod</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#CC0000;"></div><span class="name">Red</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#FFD700;"></div><span class="name">Gold</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#B0BF1A;"></div><span class="name">Acid Green</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#388E3C;"></div><span class="name">Green</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#6F4E37;"></div><span class="name">Café</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#C49A6C;"></div><span class="name">Toast</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#4B5320;"></div><span class="name">Army Green</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#808000;"></div><span class="name">Olive</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#E0F7FA;"></div><span class="name">Ice</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#F5DEB3;"></div><span class="name">Beach</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#FFCBA4;"></div><span class="name">Peach</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#FF7F50;"></div><span class="name">Coral</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#FFA500;"></div><span class="name">Orange</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#FF5F1F;"></div><span class="name">Neon Orange</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#B87333;"></div><span class="name">Copper</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#CC5500;"></div><span class="name">Burnt Orange</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#E2725B;"></div><span class="name">Terra-Cotta</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#CB4154;"></div><span class="name">Brick</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#7B3F00;"></div><span class="name">Chocolate</span></div>
+                <!-- Neutrals / Yellows / Browns -->
+                <div class="color-column-label">Neutrals · Yellows · Browns</div>
+                <div class="color-swatch" onclick="openColorModal('#FFFFF0', 'Ivory')"><div class="dot" style="background:#FFFFF0;"></div><span class="name">Ivory</span></div>
+                <div class="color-swatch" onclick="openColorModal('#D2B48C', 'Tan')"><div class="dot" style="background:#D2B48C;"></div><span class="name">Tan</span></div>
+                <div class="color-swatch" onclick="openColorModal('#C19A6B', 'Camel')"><div class="dot" style="background:#C19A6B;"></div><span class="name">Camel</span></div>
+                <div class="color-swatch" onclick="openColorModal('#FBEC5D', 'Maize')"><div class="dot" style="background:#FBEC5D;"></div><span class="name">Maize</span></div>
+                <div class="color-swatch" onclick="openColorModal('#FFF700', 'Lemon')"><div class="dot" style="background:#FFF700;"></div><span class="name">Lemon</span></div>
+                <div class="color-swatch" onclick="openColorModal('#DAA520', 'Goldenrod')"><div class="dot" style="background:#DAA520;"></div><span class="name">Goldenrod</span></div>
+                <div class="color-swatch" onclick="openColorModal('#808000', 'Olive')"><div class="dot" style="background:#808000;"></div><span class="name">Olive</span></div>
+                <div class="color-swatch" onclick="openColorModal('#FFCBA4', 'Peach')"><div class="dot" style="background:#FFCBA4;"></div><span class="name">Peach</span></div>
+                <div class="color-swatch" onclick="openColorModal('#FF7F50', 'Coral')"><div class="dot" style="background:#FF7F50;"></div><span class="name">Coral</span></div>
+                <div class="color-swatch" onclick="openColorModal('#FFA500', 'Orange')"><div class="dot" style="background:#FFA500;"></div><span class="name">Orange</span></div>
+                <div class="color-swatch" onclick="openColorModal('#CC5500', 'Burnt Orange')"><div class="dot" style="background:#CC5500;"></div><span class="name">Burnt Orange</span></div>
+                <div class="color-swatch" onclick="openColorModal('#7B3F00', 'Chocolate')"><div class="dot" style="background:#7B3F00;"></div><span class="name">Chocolate</span></div>
 
-                <div class="color-column-label">Greens &amp; Blues</div>
-                <div class="color-swatch"><div class="dot" style="background:#98FF98;"></div><span class="name">Mint</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#354A21;"></div><span class="name">Seaweed</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#BCB88A;"></div><span class="name">Sage</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#00FFFF;"></div><span class="name">Aqua</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#40E0D0;"></div><span class="name">Turquoise</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#00A86B;"></div><span class="name">Jade</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#008080;"></div><span class="name">Teal</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#32CD32;"></div><span class="name">Lime</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#39FF14;"></div><span class="name">Neon Green</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#4CBB17;"></div><span class="name">Kelly</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#50C878;"></div><span class="name">Emerald</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#8A9A5B;"></div><span class="name">Moss</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#355E3B;"></div><span class="name">Hunter</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#228B22;"></div><span class="name">Forest</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#ADD8E6;"></div><span class="name">Light Blue</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#006994;"></div><span class="name">Sea Blue</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#4682B4;"></div><span class="name">State</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#4169E1;"></div><span class="name">Royal</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#000080;"></div><span class="name">Navy</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#191970;"></div><span class="name">Midnight</span></div>
+                <!-- Greens / Blues -->
+                <div class="color-column-label">Greens · Blues</div>
+                <div class="color-swatch" onclick="openColorModal('#98FF98', 'Mint')"><div class="dot" style="background:#98FF98;"></div><span class="name">Mint</span></div>
+                <div class="color-swatch" onclick="openColorModal('#008080', 'Teal')"><div class="dot" style="background:#008080;"></div><span class="name">Teal</span></div>
+                <div class="color-swatch" onclick="openColorModal('#32CD32', 'Lime')"><div class="dot" style="background:#32CD32;"></div><span class="name">Lime</span></div>
+                <div class="color-swatch" onclick="openColorModal('#4CBB17', 'Kelly')"><div class="dot" style="background:#4CBB17;"></div><span class="name">Kelly</span></div>
+                <div class="color-swatch" onclick="openColorModal('#355E3B', 'Hunter')"><div class="dot" style="background:#355E3B;"></div><span class="name">Hunter</span></div>
+                <div class="color-swatch" onclick="openColorModal('#228B22', 'Forest')"><div class="dot" style="background:#228B22;"></div><span class="name">Forest</span></div>
+                <div class="color-swatch" onclick="openColorModal('#ADD8E6', 'Light Blue')"><div class="dot" style="background:#ADD8E6;"></div><span class="name">Light Blue</span></div>
+                <div class="color-swatch" onclick="openColorModal('#4169E1', 'Royal')"><div class="dot" style="background:#4169E1;"></div><span class="name">Royal</span></div>
+                <div class="color-swatch" onclick="openColorModal('#000080', 'Navy')"><div class="dot" style="background:#000080;"></div><span class="name">Navy</span></div>
+                <div class="color-swatch" onclick="openColorModal('#191970', 'Midnight')"><div class="dot" style="background:#191970;"></div><span class="name">Midnight</span></div>
 
-                <div class="color-column-label">Pinks, Purples &amp; Neutrals</div>
-                <div class="color-swatch"><div class="dot" style="background:#FFB6C1;"></div><span class="name">Light Pink</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#FFB3DE;"></div><span class="name">Pink Balloon</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#FF69B4;"></div><span class="name">Daisy's Rose</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#E0B0FF;"></div><span class="name">Mauve</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#FF69B4;"></div><span class="name">Hot Pink</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#FC6C85;"></div><span class="name">Watermelon</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#E30B5C;"></div><span class="name">Raspberry</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#3D0734;"></div><span class="name">Aubergine</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#800020;"></div><span class="name">Burgundy</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#DC143C;"></div><span class="name">Holiday Red</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#C8A2C8;"></div><span class="name">Lilac</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#8E4585;"></div><span class="name">Plum</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#800080;"></div><span class="name">Purple</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#C0C0C0;"></div><span class="name">Silver</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#36454F;"></div><span class="name">Charcoal</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#000000;"></div><span class="name">Black</span></div>
-                <div class="color-swatch"><div class="dot" style="background:#FFFFFF;"></div><span class="name">White</span></div>
+                <!-- Pinks / Reds / Purples / Greys -->
+                <div class="color-column-label">Pinks · Reds · Purples · Greys</div>
+                <div class="color-swatch" onclick="openColorModal('#FFB6C1', 'Light Pink')"><div class="dot" style="background:#FFB6C1;"></div><span class="name">Light Pink</span></div>
+                <div class="color-swatch" onclick="openColorModal('#FFB3DE', 'Pink Balloon')"><div class="dot" style="background:#FFB3DE;"></div><span class="name">Pink Balloon</span></div>
+                <div class="color-swatch" onclick="openColorModal('#E0B0FF', 'Mauve')"><div class="dot" style="background:#E0B0FF;"></div><span class="name">Mauve</span></div>
+                <div class="color-swatch" onclick="openColorModal('#FF69B4', 'Hot Pink')"><div class="dot" style="background:#FF69B4;"></div><span class="name">Hot Pink</span></div>
+                <div class="color-swatch" onclick="openColorModal('#E30B5C', 'Raspberry')"><div class="dot" style="background:#E30B5C;"></div><span class="name">Raspberry</span></div>
+                <div class="color-swatch" onclick="openColorModal('#3D0734', 'Aubergine')"><div class="dot" style="background:#3D0734;"></div><span class="name">Aubergine</span></div>
+                <div class="color-swatch" onclick="openColorModal('#800020', 'Burgundy')"><div class="dot" style="background:#800020;"></div><span class="name">Burgundy</span></div>
+                <div class="color-swatch" onclick="openColorModal('#DC143C', 'Holiday Red')"><div class="dot" style="background:#DC143C;"></div><span class="name">Holiday Red</span></div>
+                <div class="color-swatch" onclick="openColorModal('#C8A2C8', 'Lilac')"><div class="dot" style="background:#C8A2C8;"></div><span class="name">Lilac</span></div>
+                <div class="color-swatch" onclick="openColorModal('#8E4585', 'Plum')"><div class="dot" style="background:#8E4585;"></div><span class="name">Plum</span></div>
+                <div class="color-swatch" onclick="openColorModal('#800080', 'Purple')"><div class="dot" style="background:#800080;"></div><span class="name">Purple</span></div>
+                <div class="color-swatch" onclick="openColorModal('#C0C0C0', 'Silver')"><div class="dot" style="background:#C0C0C0;"></div><span class="name">Silver</span></div>
+                <div class="color-swatch" onclick="openColorModal('#36454F', 'Charcoal')"><div class="dot" style="background:#36454F;"></div><span class="name">Charcoal</span></div>
+                <div class="color-swatch" onclick="openColorModal('#000000', 'Black')"><div class="dot" style="background:#000000;"></div><span class="name">Black</span></div>
+                <div class="color-swatch" onclick="openColorModal('#FFFFFF', 'White')"><div class="dot" style="background:#FFFFFF;"></div><span class="name">White</span></div>
             </div>
             <p class="note" style="text-align:center;margin-top:16px;">
-                All colors shown are approximate digital representations.<br>
-                Actual fabric swatches available for viewing upon request.
+                Click any color to enlarge.<br>Actual fabric swatches available for viewing upon request.
             </p>
         </div>
     </section>
 
+    <!--  Color Modal Overlay -->
+    <div id="colorModal" class="color-modal" onclick="closeColorModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="big-dot" id="modalBigDot" style="background:#fff;"></div>
+            <div class="modal-name" id="modalName"></div>
+            <button class="close-btn" onclick="closeColorModal()">Close</button>
+        </div>
+    </div>
+
     <!-- ═══════ BARK COLLECTION ═══════ -->
     <section class="section" id="bark">
         <div class="section-title">
-            <h2>Bark Collection</h2>
+            <h2>Bark Collection – Colors with Designs</h2>
             <span class="accent-line"></span>
         </div>
         <div class="card" style="text-align:center;">
-            <h3>🌿 Textured Linen Designs</h3>
+            <h3>🌿 Textured Bark Fabrics</h3>
+            <!-- Replace the src below with your own image (e.g., "bark.jpg" or "bark.png") -->
+            <img src="bark-placeholder.jpg" alt="Bark Collection Fabric Design" style="max-width:100%; height:auto; border-radius: var(--radius-sm); margin: 20px 0; box-shadow: var(--shadow-md);" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <p style="display:none; color:var(--text-light);">Your bark collection image will appear here once you add the file to the repository.</p>
             <p style="color:var(--text-light);">A premium selection of linen patterns inspired by natural bark textures. Available in complementary colors to elevate your table setting.</p>
             <p class="note">Inquire for swatch samples and availability.</p>
         </div>
@@ -907,6 +952,21 @@
             }
         `;
         document.head.appendChild(activeStyle);
+
+        /* ─── COLOR MODAL LOGIC ─── */
+        const modal = document.getElementById('colorModal');
+        const bigDot = document.getElementById('modalBigDot');
+        const modalName = document.getElementById('modalName');
+
+        function openColorModal(color, name) {
+            bigDot.style.background = color;
+            modalName.textContent = name;
+            modal.classList.add('active');
+        }
+
+        function closeColorModal() {
+            modal.classList.remove('active');
+        }
     </script>
 </body>
 </html>
