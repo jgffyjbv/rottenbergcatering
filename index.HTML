@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Premium Catering Services - Shabbos Menus, Linen Colors, and more. Elegant catering for all occasions.">
-    <title>Golden Spoons Catering | Premium Kosher Catering</title>
+    <meta name="description" content="Rottenberg's Catering – Premium Kosher Catering for Shabbos, Weekday events & Simchas. Menus, linen colors, and more.">
+    <title>Rottenberg's Catering | Kosher Catering</title>
     <style>
         :root {
             --cream: #FFFDF7;
@@ -54,9 +54,9 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(255, 253, 247, 0.92);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
+            background: rgba(255, 253, 247, 0.94);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
             padding: 0 20px;
             display: flex;
@@ -92,7 +92,7 @@
             color: #fff;
             font-weight: 600;
             border-color: var(--accent);
-            padding: 10px 22px;
+            padding: 10px 24px;
         }
         .nav-bar a.nav-cta:hover {
             background: #8B3E1F;
@@ -113,8 +113,8 @@
             position: absolute;
             top: -60px;
             right: -40px;
-            width: 220px;
-            height: 220px;
+            width: 240px;
+            height: 240px;
             background: radial-gradient(circle, rgba(200, 150, 62, 0.12) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
@@ -194,7 +194,7 @@
         }
         .section-subtitle {
             text-align: center;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-light);
             letter-spacing: 0.04em;
             text-transform: uppercase;
@@ -269,9 +269,24 @@
             font-size: 0.85rem;
             color: var(--text-light);
             font-style: italic;
-            margin-top: 10px;
-            padding-top: 8px;
+            margin-top: 12px;
+            padding-top: 10px;
             border-top: 1px dotted var(--border);
+        }
+        .separator {
+            border: none;
+            border-top: 1px dashed var(--border);
+            margin: 24px 0;
+        }
+        .day-meal-header {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin: 20px 0 10px;
+            font-weight: 400;
+            border-bottom: 1px solid var(--gold-pale);
+            padding-bottom: 6px;
+            text-align: left;
         }
 
         /* ─── TWO COLUMN LAYOUT ─────────────── */
@@ -282,6 +297,45 @@
         }
         @media (max-width: 700px) {
             .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ─── WEEKDAY MENU SPECIFIC ─────────── */
+        .weekday-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .weekday-category {
+            margin-bottom: 10px;
+        }
+        .weekday-category h5 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 4px;
+            font-weight: 700;
+            border-bottom: 1px solid var(--gold-pale);
+            padding-bottom: 4px;
+        }
+        .weekday-category li {
+            display: flex;
+            justify-content: space-between;
+            padding: 3px 0;
+            border-bottom: 1px dotted #f0ece4;
+        }
+        .weekday-category li span.dish {
+            font-weight: 500;
+        }
+        .weekday-category li span.price {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 600px) {
+            .weekday-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -333,7 +387,7 @@
             padding-top: 10px;
             border-top: 1px solid var(--border);
         }
-        .color-column-label:first-child {
+        .color-column-label:first-of-type {
             border-top: none;
             margin-top: 0;
             padding-top: 0;
@@ -384,6 +438,12 @@
             color: #888;
             margin-top: 16px;
             letter-spacing: 0.03em;
+        }
+        .contact-address {
+            font-size: 0.95rem;
+            color: #bbb;
+            margin-top: 8px;
+            letter-spacing: 0.02em;
         }
 
         /* ─── BACK TO TOP ───────────────────── */
@@ -454,130 +514,111 @@
             .color-swatch .name {
                 font-size: 0.65rem;
             }
-            .two-col {
+            .two-col, .weekday-grid {
                 grid-template-columns: 1fr;
             }
         }
-
-        /* ─── PRINT STYLES ──────────────────── */
         @media print {
-            .nav-bar,
-            .back-to-top {
-                display: none;
-            }
-            body {
-                background: #fff;
-                color: #000;
-            }
-            .card {
-                box-shadow: none;
-                border: 1px solid #ccc;
-                break-inside: avoid;
-            }
+            .nav-bar, .back-to-top { display: none; }
+            body { background: #fff; color: #000; }
+            .card { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ═══════════════ NAVIGATION ═══════════════ -->
+    <!-- ═══════ NAVIGATION ═══════ -->
     <nav class="nav-bar" aria-label="Page navigation">
         <a href="#hero">Home</a>
-        <a href="#shabbos-menu">Shabbos Menu</a>
-        <a href="#color-chart">Color Chart</a>
-        <a href="#collections">Collections</a>
+        <a href="#shabbos-menu">Shabbos</a>
+        <a href="#weekday-menu">Weekday</a>
+        <a href="#color-chart">Colors</a>
+        <a href="#bark">Bark Collection</a>
         <a href="#contact" class="nav-cta">Contact</a>
     </nav>
 
-    <!-- ═══════════════ HERO ═══════════════ -->
+    <!-- ═══════ HERO ═══════ -->
     <header class="hero" id="hero">
         <div class="hero-content">
             <span class="hero-icon">🍽️</span>
-            <h1>Golden <span>Spoons</span> Catering</h1>
-            <p class="tagline">Premium Kosher Catering for Shabbos, Simchas &amp; Events</p>
-            <p class="sub-tagline">Elegant • Heimish • Unforgettable</p>
+            <h1>Rottenberg's <span>Catering</span></h1>
+            <p class="tagline">Premium Kosher Catering for Shabbos, Weekday Simchas &amp; Events</p>
+            <p class="sub-tagline">Heimish • Elegant • Unforgettable</p>
         </div>
     </header>
 
-    <!-- ═══════════════ SHABBOS MENU ═══════════════ -->
+    <!-- ═══════ SHABBOS MENU ═══════ -->
     <section class="section" id="shabbos-menu">
         <div class="section-title">
-            <h2>Shabbos Menus</h2>
+            <h2>Shabbos Menu</h2>
             <span class="accent-line"></span>
         </div>
         <p class="section-subtitle">Heimish Challos available upon request</p>
 
-        <!-- OPTION 1 -->
+        <!-- Option #1 Standard -->
         <div class="card">
-            <span class="price-note">Option #1 — Standard</span>
+            <span class="price-note">Option #1 – Standard</span>
             <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:14px;">Price: Per Meat &amp; Cheese</p>
 
-            <div class="two-col">
-                <!-- Night Meal -->
-                <div>
-                    <h4>🌙 Night Meal</h4>
-                    <ul>
-                        <li>Salmon Fish &amp; Gefilte</li>
-                        <li>Soup with Knaidlech &amp; Luckyshen</li>
-                        <li>Chic Peas &amp; Radish</li>
-                        <li>Breaded or Baked Chicken</li>
-                        <li>Potato Kugel, Farfel &amp; Tzimmes</li>
-                        <li>Dessert — Compot, Ice Cream or Sorbet</li>
-                        <li>Tomato Dip, Chrein, Pickles, Coleslaw</li>
-                    </ul>
-                </div>
-                <!-- Day Meal -->
-                <div>
-                    <h4>☀️ Day Meal</h4>
-                    <ul>
-                        <li>Salmon Fish &amp; Gefilte</li>
-                        <li>Eggs, Liver, Vegetables</li>
-                        <li>Chicken Cholent w/ Kishka</li>
-                        <li>Potato &amp; Luckyshen Kugel</li>
-                        <li>Assorted Cold Cuts</li>
-                        <li>Dessert — Compot, Ice Cream, Sorbet</li>
-                        <li>Tomato Dip, Chrein, Pickles, Coleslaw</li>
-                    </ul>
-                </div>
-            </div>
+            <!-- Night Meal -->
+            <h4>🌙 Night Meal</h4>
+            <ul>
+                <li>Salmon Fish &amp; Gefilte</li>
+                <li>Soup with Knaidlech &amp; Luckyshen</li>
+                <li>Chic Peas &amp; Radish</li>
+                <li>Breaded or Baked Chicken</li>
+                <li>Potato Kugel, Farfel &amp; Tzimmes</li>
+                <li>Dessert — Compot, Ice Cream or Sorbet</li>
+                <li>Tomato Dip, Chrein, Pickles, Coleslaw</li>
+            </ul>
+
+            <hr class="separator">
+            <!-- Day Meal -->
+            <div class="day-meal-header">☀️ Day Meal</div>
+            <ul>
+                <li>Salmon Fish &amp; Gefilte</li>
+                <li>Eggs, Liver, Vegetables</li>
+                <li>Chicken Cholent w/ Kishka</li>
+                <li>Potato &amp; Luckyshen Kugel</li>
+                <li>Assorted Cold Cuts</li>
+                <li>Dessert — Compot, Ice Cream, Sorbet</li>
+                <li>Tomato Dip, Chrein, Pickles, Coleslaw</li>
+            </ul>
             <p class="note">Want to upgrade only 1 or 2 courses? Ask for separate upgrade prices.</p>
         </div>
 
-        <!-- OPTION 2 -->
+        <!-- Option #2 Upgraded -->
         <div class="card">
-            <span class="price-note">Option #2 — Upgraded</span>
+            <span class="price-note">Option #2 – Upgraded</span>
             <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:14px;">Price: Per Meal &amp; Cheese</p>
 
-            <div class="two-col">
-                <!-- Night Meal -->
-                <div>
-                    <h4>🌙 Night Meal</h4>
-                    <ul>
-                        <li>Individual 3-Section Dip Plate</li>
-                        <li>Salmon &amp; Gefilte with Spiral Beets &amp; Chrein — Chinese Spoon</li>
-                        <li>Soup in Crock w/ Knaidlech &amp; Luckyshen</li>
-                        <li>Onion Kugel, Chic Peas, Radish</li>
-                        <li>Capons or Chicken Rib Steak</li>
-                        <li>Individual Potato &amp; Luckyshen Kugel</li>
-                        <li>Piped Farfel &amp; Stem Carrots</li>
-                        <li>Dessert — Apple Cobbler, Rosette</li>
-                        <li>Ice Cream with Strawberry Sauce</li>
-                        <li style="color:#999;">(Other dessert options available)</li>
-                    </ul>
-                </div>
-                <!-- Day Meal -->
-                <div>
-                    <h4>☀️ Day Meal</h4>
-                    <ul>
-                        <li>Individual 3-Section Dip Plate</li>
-                        <li>Grilled Salmon, Fried Angel Hair Pasta &amp; Gefilte</li>
-                        <li>4-Section Egg Plate — Eggs, Chopped Liver, Sautéed Liver, Tomato Salad &amp; Garnishing</li>
-                        <li>Cholent in Crocks w/ Beef (optional) &amp; Kishka</li>
-                        <li>Assorted Cold Cuts</li>
-                        <li>Dessert — Sorbet Block &amp; Strawberry Sauce</li>
-                        <li style="color:#999;">(Other dessert options available)</li>
-                    </ul>
-                </div>
-            </div>
+            <!-- Night Meal -->
+            <h4>🌙 Night Meal</h4>
+            <ul>
+                <li>Individual 3‑Section Dip Plate</li>
+                <li>Salmon &amp; Gefilte with Spiral Beets &amp; Chrein – Chinese spoon</li>
+                <li>Soup in crock w/ Knaidlech &amp; Luckyshen</li>
+                <li>Onion Kugel, Chic Peas, Radish</li>
+                <li>Capons or Chicken Rib Steak</li>
+                <li>Individual Potato &amp; Luckyshen Kugel</li>
+                <li>Piped Farfel &amp; Stem Carrots</li>
+                <li>Dessert – Apple Cobbler, Rosette</li>
+                <li>Ice Cream with Strawberry Sauce</li>
+                <li style="color:#999;">(Other dessert options available)</li>
+            </ul>
+
+            <hr class="separator">
+            <!-- Day Meal -->
+            <div class="day-meal-header">☀️ Day Meal</div>
+            <ul>
+                <li>Individual 3‑section Dip Plate</li>
+                <li>Grilled Salmon, Fried Angel Hair Pasta &amp; Gefilte</li>
+                <li>4‑Section Egg Plate – eggs, chopped liver, sautéed liver, tomato salad &amp; garnishing</li>
+                <li>Cholent in crocks w/ Beef (optional) &amp; Kishka</li>
+                <li>Assorted Cold Cuts</li>
+                <li>Dessert – Sorbet Block &amp; Strawberry sauce</li>
+                <li style="color:#999;">(Other dessert options available)</li>
+            </ul>
             <p class="note">
                 🥤 Drinks included: Soda, Seltzer, Water &amp; Ice.<br>
                 🍷 Grape Juice &amp; Wine <strong>not</strong> included.
@@ -585,18 +626,116 @@
         </div>
     </section>
 
-    <!-- ═══════════════ COLOR CHART ═══════════════ -->
-    <section class="section" id="color-chart">
+    <!-- ═══════ WEEKDAY MENU ═══════ -->
+    <section class="section" id="weekday-menu">
         <div class="section-title">
-            <h2>Linen &amp; Napkin Color Chart</h2>
+            <h2>Weekday Menu</h2>
             <span class="accent-line"></span>
         </div>
-        <p class="section-subtitle">100% Polyester — Basic Polyester Collection</p>
+        <div class="card">
+            <div class="weekday-grid">
+                <!-- APPETIZERS -->
+                <div class="weekday-category">
+                    <h5>Appetizer</h5>
+                    <ul>
+                        <li><span class="dish">Breaded Eggplant w/ Rice &amp; Vegetables</span><span class="price"></span></li>
+                        <li><span class="dish">Vegetable Filled Pastry w/ Sauce</span><span class="price"></span></li>
+                        <li><span class="dish">Vegetable Kugel</span><span class="price"></span></li>
+                        <li><span class="dish">Cabbage Eggroll</span><span class="price"></span></li>
+                        <li><span class="dish">Gnocchis Shlishkes, Turkey, Mushrooms, w/ Gravy Sauce</span><span class="price">2.50</span></li>
+                        <li style="margin-top:6px;"><span class="dish"><strong>Fish Plate</strong> – choose one fish &amp; side</span></li>
+                        <li><span class="dish">Salmon</span><span class="price">3.50</span></li>
+                        <li><span class="dish">Tilapia</span><span class="price">2.50</span></li>
+                        <li><span class="dish">Angel Hair Pasta Salad (side)</span><span class="price"></span></li>
+                    </ul>
+                </div>
+
+                <!-- SOUPS -->
+                <div class="weekday-category">
+                    <h5>Soup</h5>
+                    <ul>
+                        <li><span class="dish">Vegetable Soup</span></li>
+                        <li><span class="dish">Cream of Chicken Soup</span></li>
+                        <li><span class="dish">Butternut Squash Soup</span></li>
+                        <li><span class="dish">Cream of Mushroom Soup</span></li>
+                        <li><span class="dish">Squash Soup</span></li>
+                        <li><span class="dish">Onion Soup</span></li>
+                    </ul>
+                </div>
+
+                <!-- MAIN DISHES -->
+                <div class="weekday-category">
+                    <h5>Main Dishes</h5>
+                    <ul>
+                        <li><span class="dish">Breaded Cutlets</span></li>
+                        <li><span class="dish">Grilled Cutlets</span></li>
+                        <li><span class="dish">Battered Cutlets</span></li>
+                        <li><span class="dish">W/ Marsella Sauce</span><span class="price">2.00</span></li>
+                        <li><span class="dish">Pistachio Cutlets</span><span class="price">2.00</span></li>
+                        <li><span class="dish">Capons</span><span class="price">3.50</span></li>
+                        <li><span class="dish">Chicken Rib Steak</span><span class="price">3.50</span></li>
+                        <li><span class="dish">Tilapia Fish</span><span class="price">2.00</span></li>
+                        <li><span class="dish">Salmon Fish</span><span class="price">4.00</span></li>
+                        <li><span class="dish">Beef</span><span class="price">$8 &amp; up</span></li>
+                    </ul>
+                </div>
+
+                <!-- STARCH SIDE DISH -->
+                <div class="weekday-category">
+                    <h5>Starch Side Dish</h5>
+                    <ul>
+                        <li><span class="dish">Mashed Potatoes – choose topping</span></li>
+                        <li><span class="dish">Caramelized Onions / Sweet Potato Chips</span></li>
+                        <li><span class="dish">Tiny Cut Potatoes &amp; Sweet Potatoes</span></li>
+                        <li><span class="dish">Sliced Red &amp; White Potatoes</span></li>
+                        <li><span class="dish">Marble Potatoes</span></li>
+                        <li><span class="dish">Vegetable Orzo</span></li>
+                        <li><span class="dish">Spanish Rice</span></li>
+                        <li><span class="dish">String Beans w/ Almonds</span></li>
+                        <li><span class="dish">String Beans w/ Colored Peppers</span></li>
+                        <li><span class="dish">Sugar Snap Peas w/ Garlic &amp; Sesame Seeds</span></li>
+                        <li><span class="dish">Stir Fry Vegetable</span></li>
+                        <li><span class="dish">Broccoli</span></li>
+                        <li><span class="dish">Mini Vegetables – Pepper, Squash &amp; Carrots</span><span class="price">1.75</span></li>
+                        <li><span class="dish">2 Color Vegetable Kugel</span><span class="price">2.00</span></li>
+                    </ul>
+                </div>
+
+                <!-- DESSERTS & EXTRAS -->
+                <div class="weekday-category" style="grid-column: span 2;">
+                    <h5>Desserts &amp; Beverages</h5>
+                    <div style="display:flex; flex-wrap:wrap; gap:20px;">
+                        <ul style="flex:1;">
+                            <li><span class="dish">Ice Cream w/ Sauce</span></li>
+                            <li><span class="dish">Sorbet w/ Sauce</span></li>
+                            <li><span class="dish">Rosette Ice Cream or Sorbet</span><span class="price">$1</span></li>
+                            <li><span class="dish">Apple Cobbler</span><span class="price">1.75</span></li>
+                            <li><span class="dish">Hot Brownie</span><span class="price">1.75</span></li>
+                            <li><span class="dish">Cut Up Fruits</span><span class="price">1.75</span></li>
+                            <li><span class="dish">Eclair</span><span class="price">2.50</span></li>
+                            <li><span class="dish">Irish Coffee or Tea</span><span class="price">1.75</span></li>
+                        </ul>
+                        <div style="flex:1; min-width:140px;">
+                            <p style="font-weight:600;color:var(--accent);">Deluxe</p>
+                            <p style="font-size:0.95rem;"><strong>$5 &amp; up</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="note">All items subject to availability. Custom orders welcome.</p>
+        </div>
+    </section>
+
+    <!-- ═══════ COLOR CHART ═══════ -->
+    <section class="section" id="color-chart">
+        <div class="section-title">
+            <h2>Linen &amp; Napkin Colors</h2>
+            <span class="accent-line"></span>
+        </div>
+        <p class="section-subtitle">100% Polyester – Basic Polyester Collection</p>
 
         <div class="card" style="padding: 28px 20px;">
             <div class="color-grid">
-
-                <!-- LEFT COLUMN: Warm & Earth Tones -->
                 <div class="color-column-label">Warm &amp; Earth Tones</div>
                 <div class="color-swatch"><div class="dot" style="background:#FFFFF0;"></div><span class="name">Ivory</span></div>
                 <div class="color-swatch"><div class="dot" style="background:#D2B48C;"></div><span class="name">Tan</span></div>
@@ -627,7 +766,6 @@
                 <div class="color-swatch"><div class="dot" style="background:#CB4154;"></div><span class="name">Brick</span></div>
                 <div class="color-swatch"><div class="dot" style="background:#7B3F00;"></div><span class="name">Chocolate</span></div>
 
-                <!-- MIDDLE COLUMN: Greens & Blues -->
                 <div class="color-column-label">Greens &amp; Blues</div>
                 <div class="color-swatch"><div class="dot" style="background:#98FF98;"></div><span class="name">Mint</span></div>
                 <div class="color-swatch"><div class="dot" style="background:#354A21;"></div><span class="name">Seaweed</span></div>
@@ -650,7 +788,6 @@
                 <div class="color-swatch"><div class="dot" style="background:#000080;"></div><span class="name">Navy</span></div>
                 <div class="color-swatch"><div class="dot" style="background:#191970;"></div><span class="name">Midnight</span></div>
 
-                <!-- RIGHT COLUMN: Pinks, Purples & Neutrals -->
                 <div class="color-column-label">Pinks, Purples &amp; Neutrals</div>
                 <div class="color-swatch"><div class="dot" style="background:#FFB6C1;"></div><span class="name">Light Pink</span></div>
                 <div class="color-swatch"><div class="dot" style="background:#FFB3DE;"></div><span class="name">Pink Balloon</span></div>
@@ -677,60 +814,56 @@
         </div>
     </section>
 
-    <!-- ═══════════════ COLLECTIONS ═══════════════ -->
-    <section class="section" id="collections">
+    <!-- ═══════ BARK COLLECTION ═══════ -->
+    <section class="section" id="bark">
         <div class="section-title">
-            <h2>Our Collections</h2>
+            <h2>Bark Collection</h2>
             <span class="accent-line"></span>
         </div>
         <div class="card" style="text-align:center;">
-            <h3>🌿 Bark Collection</h3>
-            <p style="color:var(--text-light);">A premium selection of textured linen designs inspired by natural bark patterns. Available in a range of complementary colors to match any event palette.</p>
+            <h3>🌿 Textured Linen Designs</h3>
+            <p style="color:var(--text-light);">A premium selection of linen patterns inspired by natural bark textures. Available in complementary colors to elevate your table setting.</p>
             <p class="note">Inquire for swatch samples and availability.</p>
-        </div>
-        <div class="card" style="text-align:center;">
-            <h3>📋 Weekday Menu</h3>
-            <p style="color:var(--text-light);">Custom weekday catering menus are available for corporate events, family gatherings, and simchas. Tailored to your needs — from light brunches to full multi-course meals.</p>
-            <p class="note">Contact us to discuss your weekday event requirements.</p>
         </div>
     </section>
 
-    <!-- ═══════════════ CONTACT ═══════════════ -->
+    <!-- ═══════ CONTACT ═══════ -->
     <section class="contact-section" id="contact">
-        <h2>Get in Touch</h2>
+        <h2>Contact Rottenberg's Catering</h2>
         <div class="contact-info">
             <div class="contact-item">
                 <span class="icon">📞</span>
-                <span><a href="tel:+1234567890">(123) 456-7890</a></span>
+                <span><a href="tel:+17188536100">718-853-6100</a></span>
             </div>
             <div class="contact-item">
                 <span class="icon">✉️</span>
-                <span><a href="mailto:info@goldenspoonscatering.com">info@goldenspoonscatering.com</a></span>
+                <span><a href="mailto:rottenbergscatering@gmail.com">rottenbergscatering@gmail.com</a></span>
             </div>
             <div class="contact-item">
                 <span class="icon">📍</span>
-                <span>Available for events in the Tri-State area</span>
+                <span>264 Hewes St, Brooklyn, NY 11211</span>
             </div>
         </div>
         <p style="color:#aaa;max-width:500px;margin:0 auto 16px;">
-            For bookings, custom menus, or questions about our catering services, please call or email. We look forward to making your event special.
+            For bookings, custom menus, or any questions – please call or email. We look forward to making your event special.
         </p>
+        <div class="contact-address">
+            264 Hewes St, Brooklyn, NY 11211
+        </div>
         <div class="footer-note">
-            &copy; <span id="year"></span> Golden Spoons Catering. All rights reserved. &nbsp;|&nbsp; Heimish • Elegant • Kosher
+            &copy; <span id="year"></span> Rottenberg's Catering. All rights reserved. &nbsp;|&nbsp; Heimish • Elegant • Kosher
         </div>
     </section>
 
-    <!-- ═══════════════ BACK TO TOP ═══════════════ -->
+    <!-- ═══════ BACK TO TOP ═══════ -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
 
-    <!-- ═══════════════ SCRIPTS ═══════════════ -->
     <script>
         // Update copyright year
         document.getElementById('year').textContent = new Date().getFullYear();
 
         // Back to top button visibility
         const backToTopBtn = document.getElementById('backToTop');
-
         function toggleBackToTop() {
             if (window.scrollY > 500) {
                 backToTopBtn.classList.add('visible');
@@ -738,20 +871,15 @@
                 backToTopBtn.classList.remove('visible');
             }
         }
-
         window.addEventListener('scroll', toggleBackToTop, { passive: true });
-
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-
-        // Initial check
         toggleBackToTop();
 
-        // Highlight active nav link based on scroll position
+        // Active nav highlight
         const sections = document.querySelectorAll('section[id], header[id]');
         const navLinks = document.querySelectorAll('.nav-bar a');
-
         function updateActiveNav() {
             let currentId = '';
             sections.forEach(section => {
@@ -767,10 +895,8 @@
                 }
             });
         }
-
         window.addEventListener('scroll', updateActiveNav, { passive: true });
 
-        // Add active style dynamically
         const activeStyle = document.createElement('style');
         activeStyle.textContent = `
             .nav-bar a.nav-active {
