@@ -110,11 +110,6 @@
             max-width: 720px;
             margin: 0 auto;
         }
-        .hero-icon {
-            font-size: 3.2rem;
-            margin-bottom: 12px;
-            display: block;
-        }
         .hero h1 {
             font-family: var(--font-heading);
             font-size: clamp(2.8rem, 6vw, 4rem);
@@ -199,7 +194,7 @@
             padding-bottom: 12px;
         }
         .card h4 {
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: #8B7355;
@@ -493,7 +488,6 @@
             margin-bottom: 20px;
             font-weight: 500;
         }
-        /* Hidden honeypot (do not display to humans) */
         .honeypot-field {
             position: absolute;
             left: -9999px;
@@ -593,7 +587,6 @@
     <!-- ═══════ HERO ═══════ -->
     <header class="hero" id="hero">
         <div class="hero-content">
-            <span class="hero-icon">🍽️</span>
             <h1>Rottenberg's <span>Catering</span></h1>
             <p class="tagline">Premium Kosher Catering for Shabbos, Weekday Simchas &amp; Events</p>
             <p class="sub-tagline">Heimish • Elegant • Unforgettable</p>
@@ -611,10 +604,10 @@
         <!-- Option #1 Standard -->
         <div class="card">
             <span class="price-note">Option #1 – Standard</span>
-            <p style="font-size:0.95rem;color:var(--text-light);margin-bottom:18px;">Price: Per Meat &amp; Cheese</p>
+            <p style="font-size:0.95rem;color:var(--text-light);margin-bottom:18px;">Price: Per Person</p>
 
             <!-- Night Meal -->
-            <h4>🌙 Night Meal</h4>
+            <h4>Night Meal</h4>
             <ul>
                 <li>Salmon Fish &amp; Gefilte</li>
                 <li>Soup with Knaidlech &amp; Luckyshen</li>
@@ -627,7 +620,7 @@
 
             <hr class="separator">
             <!-- Day Meal -->
-            <div class="day-meal-header">☀️ Day Meal</div>
+            <div class="day-meal-header">Day Meal</div>
             <ul>
                 <li>Salmon Fish &amp; Gefilte</li>
                 <li>Eggs, Liver, Vegetables</li>
@@ -643,10 +636,10 @@
         <!-- Option #2 Upgraded -->
         <div class="card">
             <span class="price-note">Option #2 – Upgraded</span>
-            <p style="font-size:0.95rem;color:var(--text-light);margin-bottom:18px;">Price: Per Meal &amp; Cheese</p>
+            <p style="font-size:0.95rem;color:var(--text-light);margin-bottom:18px;">Price: Per Person</p>
 
             <!-- Night Meal -->
-            <h4>🌙 Night Meal</h4>
+            <h4>Night Meal</h4>
             <ul>
                 <li>Individual 3‑Section Dip Plate</li>
                 <li>Salmon &amp; Gefilte with Spiral Beets &amp; Chrein – Chinese spoon</li>
@@ -662,7 +655,7 @@
 
             <hr class="separator">
             <!-- Day Meal -->
-            <div class="day-meal-header">☀️ Day Meal</div>
+            <div class="day-meal-header">Day Meal</div>
             <ul>
                 <li>Individual 3‑section Dip Plate</li>
                 <li>Grilled Salmon, Fried Angel Hair Pasta &amp; Gefilte</li>
@@ -975,7 +968,6 @@
 
             // Block if honeypot filled (double safety for bots that ignore Formspree server-side)
             if (honeypotField && honeypotField.value.trim() !== '') {
-                // Do nothing, silently fail – bot thinks it succeeded but no email sent
                 contactForm.reset();
                 return;
             }
