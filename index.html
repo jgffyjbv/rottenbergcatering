@@ -8,7 +8,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         :root {
-            --bg: #FDFBF7;
+            --bg: #E6DFD3;  /* Warm modern background – no more white! */
             --white: #ffffff;
             --gold: #C8963E;
             --gold-light: #E8D5B7;
@@ -90,6 +90,23 @@
             color: #fff;
         }
 
+        /* NEW: Order button in nav – gold and eye-catching */
+        .nav-bar a.nav-order {
+            background: var(--gold);
+            color: #fff;
+            font-weight: 700;
+            border-color: var(--gold);
+            padding: 10px 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .nav-bar a.nav-order:hover {
+            background: #B8860B;
+            border-color: #B8860B;
+            color: #fff;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
         /* ─── HERO ──────────────────────────── */
         .hero {
             text-align: center;
@@ -102,7 +119,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(255, 253, 247, 0.85);
+            background: rgba(230, 223, 211, 0.85); /* Matches the new warm background */
         }
         .hero-content {
             position: relative;
@@ -256,6 +273,25 @@
             border-bottom: 2px solid var(--gold-pale);
             padding-bottom: 8px;
             text-align: left;
+        }
+
+        /* ─── COLLAPSIBLE MENU TOGGLE ───────── */
+        .collapsible-toggle {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            user-select: none;
+        }
+        .collapsible-toggle .toggle-arrow {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        .card.collapsed .collapsible-content {
+            display: none;
+        }
+        .card.collapsed .toggle-arrow {
+            transform: rotate(-90deg);
         }
 
         /* ─── TWO COLUMN LAYOUT ─────────────── */
@@ -582,6 +618,7 @@
         <a href="#color-chart">Colors</a>
         <a href="#bark">Bark Collection</a>
         <a href="#contact" class="nav-cta">Contact</a>
+        <a href="order.html" class="nav-order">Order Now</a>
     </nav>
 
     <!-- ═══════ HERO ═══════ -->
@@ -603,72 +640,78 @@
 
         <!-- Option #1 Standard -->
         <div class="card">
-            <span class="price-note">Option #1 – Standard</span>
-            <p style="font-size:0.95rem;color:var(--text-light);margin-bottom:18px;">Price: Per Person</p>
-
-            <!-- Night Meal -->
-            <h4>Night Meal</h4>
-            <ul>
-                <li>Salmon Fish &amp; Gefilte</li>
-                <li>Soup with Knaidlech &amp; Luckyshen</li>
-                <li>Chic Peas &amp; Radish</li>
-                <li>Breaded or Baked Chicken</li>
-                <li>Potato Kugel, Farfel &amp; Tzimmes</li>
-                <li>Dessert — Compot, Ice Cream or Sorbet</li>
-                <li>Tomato Dip, Chrein, Pickles, Coleslaw</li>
-            </ul>
-
-            <hr class="separator">
-            <!-- Day Meal -->
-            <div class="day-meal-header">Day Meal</div>
-            <ul>
-                <li>Salmon Fish &amp; Gefilte</li>
-                <li>Eggs, Liver, Vegetables</li>
-                <li>Chicken Cholent w/ Kishka</li>
-                <li>Potato &amp; Luckyshen Kugel</li>
-                <li>Assorted Cold Cuts</li>
-                <li>Dessert — Compot, Ice Cream, Sorbet</li>
-                <li>Tomato Dip, Chrein, Pickles, Coleslaw</li>
-            </ul>
-            <p class="note">Want to upgrade only 1 or 2 courses? Ask for separate upgrade prices.</p>
+            <div class="collapsible-toggle" onclick="this.closest('.card').classList.toggle('collapsed')">
+                <span class="price-note" style="margin-bottom:0;">Option #1 – Standard</span>
+                <span class="toggle-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <p style="font-size:0.95rem;color:var(--text-light);margin-top:12px;margin-bottom:18px;">Price: Per Person</p>
+                <!-- Night Meal -->
+                <h4>Night Meal</h4>
+                <ul>
+                    <li>Salmon Fish &amp; Gefilte</li>
+                    <li>Soup with Knaidlech &amp; Luckyshen</li>
+                    <li>Chic Peas &amp; Radish</li>
+                    <li>Breaded or Baked Chicken</li>
+                    <li>Potato Kugel, Farfel &amp; Tzimmes</li>
+                    <li>Dessert — Compot, Ice Cream or Sorbet</li>
+                    <li>Tomato Dip, Chrein, Pickles, Coleslaw</li>
+                </ul>
+                <hr class="separator">
+                <!-- Day Meal -->
+                <div class="day-meal-header">Day Meal</div>
+                <ul>
+                    <li>Salmon Fish &amp; Gefilte</li>
+                    <li>Eggs, Liver, Vegetables</li>
+                    <li>Chicken Cholent w/ Kishka</li>
+                    <li>Potato &amp; Luckyshen Kugel</li>
+                    <li>Assorted Cold Cuts</li>
+                    <li>Dessert — Compot, Ice Cream, Sorbet</li>
+                    <li>Tomato Dip, Chrein, Pickles, Coleslaw</li>
+                </ul>
+                <p class="note">Want to upgrade only 1 or 2 courses? Ask for separate upgrade prices.</p>
+            </div>
         </div>
 
         <!-- Option #2 Upgraded -->
         <div class="card">
-            <span class="price-note">Option #2 – Upgraded</span>
-            <p style="font-size:0.95rem;color:var(--text-light);margin-bottom:18px;">Price: Per Person</p>
-
-            <!-- Night Meal -->
-            <h4>Night Meal</h4>
-            <ul>
-                <li>Individual 3‑Section Dip Plate</li>
-                <li>Salmon &amp; Gefilte with Spiral Beets &amp; Chrein – Chinese spoon</li>
-                <li>Soup in crock w/ Knaidlech &amp; Luckyshen</li>
-                <li>Onion Kugel, Chic Peas, Radish</li>
-                <li>Capons or Chicken Rib Steak</li>
-                <li>Individual Potato &amp; Luckyshen Kugel</li>
-                <li>Piped Farfel &amp; Stem Carrots</li>
-                <li>Dessert – Apple Cobbler, Rosette</li>
-                <li>Ice Cream with Strawberry Sauce</li>
-                <li style="color:#999;">(Other dessert options available)</li>
-            </ul>
-
-            <hr class="separator">
-            <!-- Day Meal -->
-            <div class="day-meal-header">Day Meal</div>
-            <ul>
-                <li>Individual 3‑section Dip Plate</li>
-                <li>Grilled Salmon, Fried Angel Hair Pasta &amp; Gefilte</li>
-                <li>4‑Section Egg Plate – eggs, chopped liver, sautéed liver, tomato salad &amp; garnishing</li>
-                <li>Cholent in crocks w/ Beef (optional) &amp; Kishka</li>
-                <li>Assorted Cold Cuts</li>
-                <li>Dessert – Sorbet Block &amp; Strawberry sauce</li>
-                <li style="color:#999;">(Other dessert options available)</li>
-            </ul>
-            <p class="note">
-                🥤 Drinks included: Soda, Seltzer, Water &amp; Ice.<br>
-                🍷 Grape Juice &amp; Wine <strong>not</strong> included.
-            </p>
+            <div class="collapsible-toggle" onclick="this.closest('.card').classList.toggle('collapsed')">
+                <span class="price-note" style="margin-bottom:0;">Option #2 – Upgraded</span>
+                <span class="toggle-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <p style="font-size:0.95rem;color:var(--text-light);margin-top:12px;margin-bottom:18px;">Price: Per Person</p>
+                <!-- Night Meal -->
+                <h4>Night Meal</h4>
+                <ul>
+                    <li>Individual 3‑Section Dip Plate</li>
+                    <li>Salmon &amp; Gefilte with Spiral Beets &amp; Chrein – Chinese spoon</li>
+                    <li>Soup in crock w/ Knaidlech &amp; Luckyshen</li>
+                    <li>Onion Kugel, Chic Peas, Radish</li>
+                    <li>Capons or Chicken Rib Steak</li>
+                    <li>Individual Potato &amp; Luckyshen Kugel</li>
+                    <li>Piped Farfel &amp; Stem Carrots</li>
+                    <li>Dessert – Apple Cobbler, Rosette</li>
+                    <li>Ice Cream with Strawberry Sauce</li>
+                    <li style="color:#999;">(Other dessert options available)</li>
+                </ul>
+                <hr class="separator">
+                <!-- Day Meal -->
+                <div class="day-meal-header">Day Meal</div>
+                <ul>
+                    <li>Individual 3‑section Dip Plate</li>
+                    <li>Grilled Salmon, Fried Angel Hair Pasta &amp; Gefilte</li>
+                    <li>4‑Section Egg Plate – eggs, chopped liver, sautéed liver, tomato salad &amp; garnishing</li>
+                    <li>Cholent in crocks w/ Beef (optional) &amp; Kishka</li>
+                    <li>Assorted Cold Cuts</li>
+                    <li>Dessert – Sorbet Block &amp; Strawberry sauce</li>
+                    <li style="color:#999;">(Other dessert options available)</li>
+                </ul>
+                <p class="note">
+                    🥤 Drinks included: Soda, Seltzer, Water &amp; Ice.<br>
+                    🍷 Grape Juice &amp; Wine <strong>not</strong> included.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -679,96 +722,102 @@
             <span class="accent-line"></span>
         </div>
         <div class="card">
-            <div class="weekday-grid">
-                <!-- APPETIZERS -->
-                <div class="weekday-category">
-                    <h5>Appetizer</h5>
-                    <ul>
-                        <li><span class="dish">Breaded Eggplant w/ Rice &amp; Vegetables</span><span class="price"></span></li>
-                        <li><span class="dish">Vegetable Filled Pastry w/ Sauce</span><span class="price"></span></li>
-                        <li><span class="dish">Vegetable Kugel</span><span class="price"></span></li>
-                        <li><span class="dish">Cabbage Eggroll</span><span class="price"></span></li>
-                        <li><span class="dish">Gnocchis Shlishkes, Turkey, Mushrooms, w/ Gravy Sauce</span><span class="price">2.50</span></li>
-                        <li style="margin-top:6px;"><span class="dish"><strong>Fish Plate</strong> – choose one fish &amp; side</span></li>
-                        <li><span class="dish">Salmon</span><span class="price">3.50</span></li>
-                        <li><span class="dish">Tilapia</span><span class="price">2.50</span></li>
-                        <li><span class="dish">Angel Hair Pasta Salad (side)</span><span class="price"></span></li>
-                    </ul>
-                </div>
-
-                <!-- SOUPS -->
-                <div class="weekday-category">
-                    <h5>Soup</h5>
-                    <ul>
-                        <li><span class="dish">Vegetable Soup</span></li>
-                        <li><span class="dish">Cream of Chicken Soup</span></li>
-                        <li><span class="dish">Butternut Squash Soup</span></li>
-                        <li><span class="dish">Cream of Mushroom Soup</span></li>
-                        <li><span class="dish">Squash Soup</span></li>
-                        <li><span class="dish">Onion Soup</span></li>
-                    </ul>
-                </div>
-
-                <!-- MAIN DISHES -->
-                <div class="weekday-category">
-                    <h5>Main Dishes</h5>
-                    <ul>
-                        <li><span class="dish">Breaded Cutlets</span></li>
-                        <li><span class="dish">Grilled Cutlets</span></li>
-                        <li><span class="dish">Battered Cutlets</span></li>
-                        <li><span class="dish">W/ Marsella Sauce</span><span class="price">2.00</span></li>
-                        <li><span class="dish">Pistachio Cutlets</span><span class="price">2.00</span></li>
-                        <li><span class="dish">Capons</span><span class="price">3.50</span></li>
-                        <li><span class="dish">Chicken Rib Steak</span><span class="price">3.50</span></li>
-                        <li><span class="dish">Tilapia Fish</span><span class="price">2.00</span></li>
-                        <li><span class="dish">Salmon Fish</span><span class="price">4.00</span></li>
-                        <li><span class="dish">Beef</span><span class="price">$8 &amp; up</span></li>
-                    </ul>
-                </div>
-
-                <!-- STARCH SIDE DISH -->
-                <div class="weekday-category">
-                    <h5>Starch Side Dish</h5>
-                    <ul>
-                        <li><span class="dish">Mashed Potatoes – choose topping</span></li>
-                        <li><span class="dish">Caramelized Onions / Sweet Potato Chips</span></li>
-                        <li><span class="dish">Tiny Cut Potatoes &amp; Sweet Potatoes</span></li>
-                        <li><span class="dish">Sliced Red &amp; White Potatoes</span></li>
-                        <li><span class="dish">Marble Potatoes</span></li>
-                        <li><span class="dish">Vegetable Orzo</span></li>
-                        <li><span class="dish">Spanish Rice</span></li>
-                        <li><span class="dish">String Beans w/ Almonds</span></li>
-                        <li><span class="dish">String Beans w/ Colored Peppers</span></li>
-                        <li><span class="dish">Sugar Snap Peas w/ Garlic &amp; Sesame Seeds</span></li>
-                        <li><span class="dish">Stir Fry Vegetable</span></li>
-                        <li><span class="dish">Broccoli</span></li>
-                        <li><span class="dish">Mini Vegetables – Pepper, Squash &amp; Carrots</span><span class="price">1.75</span></li>
-                        <li><span class="dish">2 Color Vegetable Kugel</span><span class="price">2.00</span></li>
-                    </ul>
-                </div>
-
-                <!-- DESSERTS & EXTRAS -->
-                <div class="weekday-category" style="grid-column: span 2;">
-                    <h5>Desserts &amp; Beverages</h5>
-                    <div style="display:flex; flex-wrap:wrap; gap:24px;">
-                        <ul style="flex:1;">
-                            <li><span class="dish">Ice Cream w/ Sauce</span></li>
-                            <li><span class="dish">Sorbet w/ Sauce</span></li>
-                            <li><span class="dish">Rosette Ice Cream or Sorbet</span><span class="price">$1</span></li>
-                            <li><span class="dish">Apple Cobbler</span><span class="price">1.75</span></li>
-                            <li><span class="dish">Hot Brownie</span><span class="price">1.75</span></li>
-                            <li><span class="dish">Cut Up Fruits</span><span class="price">1.75</span></li>
-                            <li><span class="dish">Eclair</span><span class="price">2.50</span></li>
-                            <li><span class="dish">Irish Coffee or Tea</span><span class="price">1.75</span></li>
+            <div class="collapsible-toggle" onclick="this.closest('.card').classList.toggle('collapsed')">
+                <h3 style="border-bottom:none; padding-bottom:0; margin-bottom:0;">Weekday Selections</h3>
+                <span class="toggle-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="weekday-grid" style="margin-top:20px;">
+                    <!-- APPETIZERS -->
+                    <div class="weekday-category">
+                        <h5>Appetizer</h5>
+                        <ul>
+                            <li><span class="dish">Breaded Eggplant w/ Rice &amp; Vegetables</span><span class="price"></span></li>
+                            <li><span class="dish">Vegetable Filled Pastry w/ Sauce</span><span class="price"></span></li>
+                            <li><span class="dish">Vegetable Kugel</span><span class="price"></span></li>
+                            <li><span class="dish">Cabbage Eggroll</span><span class="price"></span></li>
+                            <li><span class="dish">Gnocchis Shlishkes, Turkey, Mushrooms, w/ Gravy Sauce</span><span class="price">2.50</span></li>
+                            <li style="margin-top:6px;"><span class="dish"><strong>Fish Plate</strong> – choose one fish &amp; side</span></li>
+                            <li><span class="dish">Salmon</span><span class="price">3.50</span></li>
+                            <li><span class="dish">Tilapia</span><span class="price">2.50</span></li>
+                            <li><span class="dish">Angel Hair Pasta Salad (side)</span><span class="price"></span></li>
                         </ul>
-                        <div style="flex:1; min-width:140px;">
-                            <p style="font-weight:700;color:var(--accent);">Deluxe</p>
-                            <p style="font-size:1rem;"><strong>$5 &amp; up</strong></p>
+                    </div>
+
+                    <!-- SOUPS -->
+                    <div class="weekday-category">
+                        <h5>Soup</h5>
+                        <ul>
+                            <li><span class="dish">Vegetable Soup</span></li>
+                            <li><span class="dish">Cream of Chicken Soup</span></li>
+                            <li><span class="dish">Butternut Squash Soup</span></li>
+                            <li><span class="dish">Cream of Mushroom Soup</span></li>
+                            <li><span class="dish">Squash Soup</span></li>
+                            <li><span class="dish">Onion Soup</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- MAIN DISHES -->
+                    <div class="weekday-category">
+                        <h5>Main Dishes</h5>
+                        <ul>
+                            <li><span class="dish">Breaded Cutlets</span></li>
+                            <li><span class="dish">Grilled Cutlets</span></li>
+                            <li><span class="dish">Battered Cutlets</span></li>
+                            <li><span class="dish">W/ Marsella Sauce</span><span class="price">2.00</span></li>
+                            <li><span class="dish">Pistachio Cutlets</span><span class="price">2.00</span></li>
+                            <li><span class="dish">Capons</span><span class="price">3.50</span></li>
+                            <li><span class="dish">Chicken Rib Steak</span><span class="price">3.50</span></li>
+                            <li><span class="dish">Tilapia Fish</span><span class="price">2.00</span></li>
+                            <li><span class="dish">Salmon Fish</span><span class="price">4.00</span></li>
+                            <li><span class="dish">Beef</span><span class="price">$8 &amp; up</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- STARCH SIDE DISH -->
+                    <div class="weekday-category">
+                        <h5>Starch Side Dish</h5>
+                        <ul>
+                            <li><span class="dish">Mashed Potatoes – choose topping</span></li>
+                            <li><span class="dish">Caramelized Onions / Sweet Potato Chips</span></li>
+                            <li><span class="dish">Tiny Cut Potatoes &amp; Sweet Potatoes</span></li>
+                            <li><span class="dish">Sliced Red &amp; White Potatoes</span></li>
+                            <li><span class="dish">Marble Potatoes</span></li>
+                            <li><span class="dish">Vegetable Orzo</span></li>
+                            <li><span class="dish">Spanish Rice</span></li>
+                            <li><span class="dish">String Beans w/ Almonds</span></li>
+                            <li><span class="dish">String Beans w/ Colored Peppers</span></li>
+                            <li><span class="dish">Sugar Snap Peas w/ Garlic &amp; Sesame Seeds</span></li>
+                            <li><span class="dish">Stir Fry Vegetable</span></li>
+                            <li><span class="dish">Broccoli</span></li>
+                            <li><span class="dish">Mini Vegetables – Pepper, Squash &amp; Carrots</span><span class="price">1.75</span></li>
+                            <li><span class="dish">2 Color Vegetable Kugel</span><span class="price">2.00</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- DESSERTS & EXTRAS -->
+                    <div class="weekday-category" style="grid-column: span 2;">
+                        <h5>Desserts &amp; Beverages</h5>
+                        <div style="display:flex; flex-wrap:wrap; gap:24px;">
+                            <ul style="flex:1;">
+                                <li><span class="dish">Ice Cream w/ Sauce</span></li>
+                                <li><span class="dish">Sorbet w/ Sauce</span></li>
+                                <li><span class="dish">Rosette Ice Cream or Sorbet</span><span class="price">$1</span></li>
+                                <li><span class="dish">Apple Cobbler</span><span class="price">1.75</span></li>
+                                <li><span class="dish">Hot Brownie</span><span class="price">1.75</span></li>
+                                <li><span class="dish">Cut Up Fruits</span><span class="price">1.75</span></li>
+                                <li><span class="dish">Eclair</span><span class="price">2.50</span></li>
+                                <li><span class="dish">Irish Coffee or Tea</span><span class="price">1.75</span></li>
+                            </ul>
+                            <div style="flex:1; min-width:140px;">
+                                <p style="font-weight:700;color:var(--accent);">Deluxe</p>
+                                <p style="font-size:1rem;"><strong>$5 &amp; up</strong></p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <p class="note">All items subject to availability. Custom orders welcome.</p>
             </div>
-            <p class="note">All items subject to availability. Custom orders welcome.</p>
         </div>
     </section>
 
