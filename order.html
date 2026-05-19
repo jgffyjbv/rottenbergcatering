@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form | Rottenberg's Catering</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --white: #ffffff;
+            --gold: #C8963E;
+            --gold-light: #E8D5B7;
+            --gold-pale: #F7EFE2;
+            --charcoal: #2E2E2E;
+            --text: #4A4A4A;
+            --text-light: #6B6B6B;
+            --border: #E5DED2;
+            --accent: #A0522D;
+            --shadow-sm: 0 2px 10px rgba(0,0,0,0.05);
+            --shadow-md: 0 8px 30px rgba(0,0,0,0.08);
+            --radius: 12px;
+            --transition: 0.3s ease;
+            --font-heading: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', 'Segoe UI', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            color: var(--charcoal);
+            text-align: center;
+            margin: 40px 0 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        .menu-section {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 30px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+        }
+        .menu-section h2 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--accent);
+            border-bottom: 2px solid var(--gold-pale);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .menu-section h2 .toggle-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+        .menu-section.collapsed .menu-content {
+            display: none;
+        }
+        .menu-section.collapsed h2 .toggle-icon {
+            transform: rotate(-90deg);
+        }
+        .category {
+            margin: 20px 0;
+        }
+        .category-title {
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #8B7355;
+            margin-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 4px;
+        }
+        .item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            padding: 6px 0;
+            border-bottom: 1px dotted #F0EAD6;
+        }
+        .item label {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+        .item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--accent);
+        }
+        .item .price {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-left: auto;
+        }
+        .quantity-wrap {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-left: 12px;
+        }
+        .quantity-wrap input {
+            width: 50px;
+            padding: 4px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--charcoal);
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            background: #fff;
+        }
+        .form-group select {
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%236B6B6B" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 36px;
+        }
+        .btn-submit {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 16px 40px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: block;
+            margin: 40px auto 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            box-shadow: var(--shadow-md);
+        }
+        .btn-submit:hover {
+            background: #8B3E1F;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        .note {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .hidden-textarea { display: none; }
+
+        @media (max-width: 600px) {
+            .item { flex-wrap: wrap; }
+            .item .price { margin-left: 0; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🛒 Build Your Order</h1>
+    <p class="subtitle">Select the dishes you want for your event. You'll be able to add contact details and send the selection directly to us.</p>
+
+    <form id="orderForm" action="https://formspree.io/f/your-form-id" method="POST">
+        <!-- Hidden fields for compiled order -->
+        <textarea name="order-summary" id="orderSummary" class="hidden-textarea" rows="10" aria-hidden="true"></textarea>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+        <!-- ─── CONTACT & EVENT DETAILS ─── -->
+        <div class="menu-section">
+            <h2 onclick="this.parentElement.classList.toggle('collapsed')">📋 Contact & Event Info <span class="toggle-icon">▼</span></h2>
+            <div class="menu-content">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Full name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(845) 555-0123">
+                </div>
+                <div class="form-group">
+                    <label for="eventDate">Event Date</label>
+                    <input type="date" id="eventDate" name="eventDate">
+                </div>
+                <div class="form-group">
+                    <label for="guests">Number of Guests</label>
+                    <input type="number" id="guests" name="guests" min="1" placeholder="Approx. guest count">
+                </div>
+                <div class="form-group">
+                    <label for="notes">Special Notes / Requests</label>
+                    <textarea id="notes" name="notes" rows="3" placeholder="Any dietary needs, allergies, or other details..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- ─── SHABBOS MENU OPTION 1 ─── -->
+        <div class="menu-section collapsed">
+            <h2 onclick="this.parentElement.classList.toggle('collapsed')">🕯️ Shabbos – Option #1 (Standard) <span class="toggle-icon">▼</span></h2>
+            <div class="menu-content">
+                <div class="category">
+                    <div class="category-title">🌙 Night Meal</div>
+                    <div class="item"><label><input type="checkbox" data-item="Salmon Fish & Gefilte (Night, Opt1)"> Salmon Fish & Gefilte</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Soup with Knaidlech & Luckyshen (Night, Opt1)"> Soup with Knaidlech & Luckyshen</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Chic Peas & Radish (Night, Opt1)"> Chic Peas & Radish</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Breaded or Baked Chicken (Night, Opt1)"> Breaded or Baked Chicken</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Potato Kugel, Farfel & Tzimmes (Night, Opt1)"> Potato Kugel, Farfel & Tzimmes</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Dessert – Compot, Ice Cream or Sorbet (Night, Opt1)"> Dessert – Compot, Ice Cream or Sorbet</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Tomato Dip, Chrein, Pickles, Coleslaw (Night, Opt1)"> Tomato Dip, Chrein, Pickles, Coleslaw</label></div>
+                </div>
+                <div class="category">
+                    <div class="category-title">☀️ Day Meal</div>
+                    <div class="item"><label><input type="checkbox" data-item="Salmon Fish & Gefilte (Day, Opt1)"> Salmon Fish & Gefilte</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Eggs, Liver, Vegetables (Day, Opt1)"> Eggs, Liver, Vegetables</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Chicken Cholent w/ Kishka (Day, Opt1)"> Chicken Cholent w/ Kishka</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Potato & Luckyshen Kugel (Day, Opt1)"> Potato & Luckyshen Kugel</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Assorted Cold Cuts (Day, Opt1)"> Assorted Cold Cuts</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Dessert – Compot, Ice Cream, Sorbet (Day, Opt1)"> Dessert – Compot, Ice Cream, Sorbet</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Tomato Dip, Chrein, Pickles, Coleslaw (Day, Opt1)"> Tomato Dip, Chrein, Pickles, Coleslaw</label></div>
+                </div>
+                <p class="note">Want to upgrade only 1 or 2 courses? Ask in the notes.</p>
+            </div>
+        </div>
+
+        <!-- ─── SHABBOS MENU OPTION 2 ─── -->
+        <div class="menu-section collapsed">
+            <h2 onclick="this.parentElement.classList.toggle('collapsed')">🕯️ Shabbos – Option #2 (Upgraded) <span class="toggle-icon">▼</span></h2>
+            <div class="menu-content">
+                <div class="category">
+                    <div class="category-title">🌙 Night Meal</div>
+                    <div class="item"><label><input type="checkbox" data-item="Individual 3-Section Dip Plate (Night, Opt2)"> Individual 3-Section Dip Plate</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Salmon & Gefilte with Spiral Beets & Chrein – Chinese spoon (Night, Opt2)"> Salmon & Gefilte with Spiral Beets & Chrein</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Soup in crock w/ Knaidlech & Luckyshen (Night, Opt2)"> Soup in crock w/ Knaidlech & Luckyshen</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Onion Kugel, Chic Peas, Radish (Night, Opt2)"> Onion Kugel, Chic Peas, Radish</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Capons or Chicken Rib Steak (Night, Opt2)"> Capons or Chicken Rib Steak</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Individual Potato & Luckyshen Kugel (Night, Opt2)"> Individual Potato & Luckyshen Kugel</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Piped Farfel & Stem Carrots (Night, Opt2)"> Piped Farfel & Stem Carrots</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Dessert – Apple Cobbler, Rosette (Night, Opt2)"> Dessert – Apple Cobbler, Rosette</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Ice Cream with Strawberry Sauce (Night, Opt2)"> Ice Cream with Strawberry Sauce</label></div>
+                </div>
+                <div class="category">
+                    <div class="category-title">☀️ Day Meal</div>
+                    <div class="item"><label><input type="checkbox" data-item="Individual 3-section Dip Plate (Day, Opt2)"> Individual 3-section Dip Plate</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Grilled Salmon, Fried Angel Hair Pasta & Gefilte (Day, Opt2)"> Grilled Salmon, Fried Angel Hair Pasta & Gefilte</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="4‑Section Egg Plate – eggs, chopped liver, sautéed liver, tomato salad (Day, Opt2)"> 4‑Section Egg Plate</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Cholent in crocks w/ Beef (optional) & Kishka (Day, Opt2)"> Cholent in crocks w/ Beef & Kishka</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Assorted Cold Cuts (Day, Opt2)"> Assorted Cold Cuts</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Dessert – Sorbet Block & Strawberry sauce (Day, Opt2)"> Dessert – Sorbet Block & Strawberry sauce</label></div>
+                </div>
+                <p class="note">Drinks included: Soda, Seltzer, Water & Ice. Grape Juice & Wine not included.</p>
+            </div>
+        </div>
+
+        <!-- ─── WEEKDAY MENU ─── -->
+        <div class="menu-section collapsed">
+            <h2 onclick="this.parentElement.classList.toggle('collapsed')">🍽️ Weekday Menu <span class="toggle-icon">▼</span></h2>
+            <div class="menu-content">
+                <div class="category">
+                    <div class="category-title">Appetizers</div>
+                    <div class="item"><label><input type="checkbox" data-item="Breaded Eggplant w/ Rice & Vegetables"> Breaded Eggplant w/ Rice & Vegetables</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Vegetable Filled Pastry w/ Sauce"> Vegetable Filled Pastry w/ Sauce</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Vegetable Kugel"> Vegetable Kugel</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Cabbage Eggroll"> Cabbage Eggroll</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Gnocchis Shlishkes, Turkey, Mushrooms, w/ Gravy Sauce" data-price="2.50"> Gnocchis Shlishkes, Turkey, Mushrooms, w/ Gravy Sauce <span class="price">$2.50</span></label></div>
+                    <div class="item"><label><strong>Fish Plate</strong> – choose one fish & side</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Salmon (Fish Plate)" data-price="3.50"> Salmon <span class="price">$3.50</span></label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Tilapia (Fish Plate)" data-price="2.50"> Tilapia <span class="price">$2.50</span></label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Angel Hair Pasta Salad (side)"> Angel Hair Pasta Salad (side)</label></div>
+                </div>
+                <div class="category">
+                    <div class="category-title">Soups</div>
+                    <div class="item"><label><input type="checkbox" data-item="Vegetable Soup"> Vegetable Soup</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Cream of Chicken Soup"> Cream of Chicken Soup</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Butternut Squash Soup"> Butternut Squash Soup</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Cream of Mushroom Soup"> Cream of Mushroom Soup</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Squash Soup"> Squash Soup</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Onion Soup"> Onion Soup</label></div>
+                </div>
+                <div class="category">
+                    <div class="category-title">Main Dishes</div>
+                    <div class="item"><label><input type="checkbox" data-item="Breaded Cutlets"> Breaded Cutlets</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Grilled Cutlets"> Grilled Cutlets</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Battered Cutlets"> Battered Cutlets</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Cutlets w/ Marsella Sauce" data-price="2.00"> Cutlets w/ Marsella Sauce <span class="price">$2.00</span></label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Pistachio Cutlets" data-price="2.00"> Pistachio Cutlets <span class="price">$2.00</span></label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Capons" data-price="3.50"> Capons <span class="price">$3.50</span></label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Chicken Rib Steak" data-price="3.50"> Chicken Rib Steak <span class="price">$3.50</span></label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Tilapia Fish" data-price="2.00"> Tilapia Fish <span class="price">$2.00</span></label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Salmon Fish" data-price="4.00"> Salmon Fish <span class="price">$4.00</span></label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Beef (various)" data-price="8.00"> Beef <span class="price">$8 &amp; up</span></label></div>
+                </div>
+                <div class="category">
+                    <div class="category-title">Starch & Side Dishes</div>
+                    <div class="item"><label><input type="checkbox" data-item="Mashed Potatoes – choose topping"> Mashed Potatoes</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Caramelized Onions / Sweet Potato Chips"> Caramelized Onions / Sweet Potato Chips</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Tiny Cut Potatoes & Sweet Potatoes"> Tiny Cut Potatoes & Sweet Potatoes</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Sliced Red & White Potatoes"> Sliced Red & White Potatoes</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Marble Potatoes"> Marble Potatoes</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Vegetable Orzo"> Vegetable Orzo</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Spanish Rice"> Spanish Rice</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="String Beans w/ Almonds"> String Beans w/ Almonds</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="String Beans w/ Colored Peppers"> String Beans w/ Colored Peppers</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Sugar Snap Peas w/ Garlic & Sesame Seeds"> Sugar Snap Peas w/ Garlic & Sesame Seeds</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Stir Fry Vegetable"> Stir Fry Vegetable</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Broccoli"> Broccoli</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Mini Vegetables – Pepper, Squash & Carrots" data-price="1.75"> Mini Vegetables <span class="price">$1.75</span></label></div>
+                    <div class="item"><label><input type="checkbox" data-item="2 Color Vegetable Kugel" data-price="2.00"> 2 Color Vegetable Kugel <span class="price">$2.00</span></label></div>
+                </div>
+                <div class="category">
+                    <div class="category-title">Desserts & Beverages</div>
+                    <div class="item"><label><input type="checkbox" data-item="Ice Cream w/ Sauce"> Ice Cream w/ Sauce</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Sorbet w/ Sauce"> Sorbet w/ Sauce</label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Rosette Ice Cream or Sorbet" data-price="1.00"> Rosette Ice Cream or Sorbet <span class="price">$1.00</span></label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Apple Cobbler" data-price="1.75"> Apple Cobbler <span class="price">$1.75</span></label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Hot Brownie" data-price="1.75"> Hot Brownie <span class="price">$1.75</span></label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Cut Up Fruits" data-price="1.75"> Cut Up Fruits <span class="price">$1.75</span></label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Eclair" data-price="2.50"> Eclair <span class="price">$2.50</span></label></div>
+                    <div class="item"><label><input type="checkbox" data-item="Irish Coffee or Tea" data-price="1.75"> Irish Coffee or Tea <span class="price">$1.75</span></label></div>
+                    <p class="note">Deluxe desserts $5 &amp; up (specify in notes)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ─── LINEN COLOR ─── -->
+        <div class="menu-section collapsed">
+            <h2 onclick="this.parentElement.classList.toggle('collapsed')">🎨 Linen Color Selection <span class="toggle-icon">▼</span></h2>
+            <div class="menu-content">
+                <div class="form-group">
+                    <label for="linenColor">Choose Linen Color</label>
+                    <select id="linenColor" name="linenColor">
+                        <option value="">-- None / Not sure --</option>
+                        <option>Ivory</option><option>Tan</option><option>Camel</option>
+                        <option>Maize</option><option>Lemon</option><option>Goldenrod</option>
+                        <option>Olive</option><option>Peach</option><option>Coral</option>
+                        <option>Orange</option><option>Burnt Orange</option><option>Chocolate</option>
+                        <option>Mint</option><option>Teal</option><option>Lime</option>
+                        <option>Kelly</option><option>Hunter</option><option>Forest</option>
+                        <option>Light Blue</option><option>Royal</option><option>Navy</option>
+                        <option>Midnight</option><option>Light Pink</option><option>Pink Balloon</option>
+                        <option>Mauve</option><option>Hot Pink</option><option>Raspberry</option>
+                        <option>Aubergine</option><option>Burgundy</option><option>Holiday Red</option>
+                        <option>Lilac</option><option>Plum</option><option>Purple</option>
+                        <option>Silver</option><option>Charcoal</option><option>Black</option><option>White</option>
+                    </select>
+                </div>
+                <p class="note">Actual fabric swatches available upon request.</p>
+            </div>
+        </div>
+
+        <button type="submit" class="btn-submit">📩 Send Order to Rottenberg's</button>
+    </form>
+    <a href="/" class="back-link">← Back to main site</a>
+</div>
+
+<script>
+    // Prepare order summary on submit
+    const form = document.getElementById('orderForm');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+        const items = [];
+        checkboxes.forEach(cb => {
+            const itemName = cb.getAttribute('data-item') || cb.parentElement.textContent.trim();
+            items.push(itemName);
+        });
+        const linen = document.getElementById('linenColor').value;
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const date = document.getElementById('eventDate').value;
+        const guests = document.getElementById('guests').value;
+        const notes = document.getElementById('notes').value;
+
+        let summary = 'ORDER SUMMARY\n';
+        summary += '══════════════\n';
+        summary += `Customer: ${name}\nEmail: ${email}\nPhone: ${phone}\n`;
+        summary += `Event Date: ${date}\nGuests: ${guests}\n`;
+        summary += `Linen Color: ${linen || 'None'}\n\n`;
+        summary += 'SELECTED ITEMS:\n';
+        if (items.length === 0) {
+            summary += '  (No dishes selected)\n';
+        } else {
+            items.forEach((item, idx) => summary += `  ${idx+1}. ${item}\n`);
+        }
+        summary += `\nSpecial Notes: ${notes || 'None'}`;
+
+        document.getElementById('orderSummary').value = summary;
+
+        // Now submit the form
+        const formData = new FormData(form);
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            if (response.ok) {
+                alert('Order sent successfully! We will get back to you soon.');
+                form.reset();
+            } else {
+                alert('Oops! Something went wrong. Please try again.');
+            }
+        }).catch(() => alert('Network error. Please check your connection.'));
+    });
+</script>
+</body>
+</html>
