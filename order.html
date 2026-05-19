@@ -7,7 +7,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         :root {
-            --bg: #FDFBF7;
+            --bg: #E6DFD3;   /* warm modern background – same as index */
             --white: #ffffff;
             --gold: #C8963E;
             --gold-light: #E8D5B7;
@@ -66,6 +66,9 @@
             padding-bottom: 8px;
             margin-bottom: 20px;
             cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .menu-section h2 .toggle-icon {
             font-size: 1.2rem;
@@ -192,11 +195,6 @@
             font-weight: 600;
         }
         .hidden-textarea { display: none; }
-
-        @media (max-width: 600px) {
-            .item { flex-wrap: wrap; }
-            .item .price { margin-left: 0; width: 100%; }
-        }
     </style>
 </head>
 <body>
@@ -204,8 +202,8 @@
     <h1>🛒 Build Your Order</h1>
     <p class="subtitle">Select the dishes you want for your event. You'll be able to add contact details and send the selection directly to us.</p>
 
-    <form id="orderForm" action="https://formspree.io/f/your-form-id" method="POST">
-        <!-- Hidden fields for compiled order -->
+    <form id="orderForm" action="https://formspree.io/f/xwvykbbj" method="POST">
+        <!-- Hidden field for compiled order summary -->
         <textarea name="order-summary" id="orderSummary" class="hidden-textarea" rows="10" aria-hidden="true"></textarea>
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
