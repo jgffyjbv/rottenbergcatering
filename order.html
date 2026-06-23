@@ -208,10 +208,33 @@
             font-weight: 600;
         }
         .hidden-textarea { display: none; }
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 28px 0 4px;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            padding: 9px 18px;
+            border-radius: 30px;
+            border: 1px solid var(--gold-light);
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        .back-home:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+            transform: translateX(-2px);
+        }
     </style>
 </head>
 <body>
 <div class="container">
+    <a href="index.html" class="back-home">← Back to Home</a>
     <h1>🛒 Build Your Order</h1>
     <p class="subtitle">Select the dishes you want for your event. You'll be able to add contact details and send the selection directly to us.</p>
 
