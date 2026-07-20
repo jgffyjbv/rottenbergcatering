@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rottenberg's Catering menus — complete Shabbos night &amp; day meals (Standard and Upgraded options) plus our full weekday menu of appetizers, soups, mains, sides, and desserts. Brooklyn, NY.">
+    <title>Our Menus | Rottenberg's Catering — Shabbos &amp; Weekday Kosher Menus</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%231E5945'/%3E%3Cpath d='M12 29a12 12 0 0 1 24 0z' fill='%23C8963E'/%3E%3Ccircle cx='24' cy='14.5' r='2' fill='%23E8D5B7'/%3E%3Cpath d='M10 31h28' stroke='%23E8D5B7' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        /* menu page extras */
+        .price-line { font-size: .95rem; color: var(--text-light); margin: 2px 0 6px; }
+        .menu-card ul.dishes li.muted { color: #999; }
+        .menu-cat ul { list-style: none; padding: 0; margin: 0 0 6px; }
+        .menu-cat ul li { padding: 7px 0; border-bottom: 1px dotted #F0EAD6; font-size: .95rem; color: var(--text); }
+        .menu-cat ul li:last-child { border-bottom: none; }
+        .menu-cat { margin-bottom: 10px; }
+        .cat-span { grid-column: 1 / -1; }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════ HEADER ═══════ -->
+    <header class="site-header">
+        <div class="wrap hbar">
+            <a class="brand" href="index.html" aria-label="Rottenberg's Catering home">
+                <svg class="logo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect width="48" height="48" rx="12" fill="#1E5945"/>
+                    <path d="M12 29a12 12 0 0 1 24 0z" fill="#C8963E"/>
+                    <circle cx="24" cy="14.5" r="2" fill="#E8D5B7"/>
+                    <path d="M10 31h28" stroke="#E8D5B7" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+                <span class="name">Rottenberg's <em>Catering</em><small>Heimish · Elegant · Kosher</small></span>
+            </a>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menus</a>
+                <a href="linens.html">Linens &amp; Colors</a>
+                <a href="contact.html">Contact</a>
+                <a href="order.html" class="nav-order">Order Now</a>
+            </nav>
+            <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ═══════ PAGE HERO ═══════ -->
+        <div class="page-hero">
+            <h1>Our <em>Menus</em></h1>
+            <p>Complete Shabbos menus — night &amp; day meals in Standard and Upgraded options — plus our full weekday menu. Heimish Challos available upon request.</p>
+            <span class="accent-line"></span>
+        </div>
+
+        <!-- ═══════ SHABBOS MENU ═══════ -->
+        <section class="section" id="shabbos">
+            <div class="wrap">
+                <div class="section-title reveal">
+                    <span class="eyebrow">Shabbos</span>
+                    <h2>Shabbos Menu</h2>
+                    <span class="accent-line"></span>
+                    <p>Heimish Challos available upon request</p>
+                </div>
+
+                <!-- Option #1 Standard -->
+                <div class="menu-card reveal">
+                    <span class="badge">Option #1 – Standard</span>
+                    <p class="price-line">Price: Per Person</p>
+
+                    <div class="meal-head">🌙 Night Meal</div>
+                    <ul class="dishes">
+                        <li>Salmon Fish &amp; Gefilte</li>
+                        <li>Soup with Knaidlech &amp; Luckyshen</li>
+                        <li>Chic Peas &amp; Radish</li>
+                        <li>Breaded or Baked Chicken</li>
+                        <li>Potato Kugel, Farfel &amp; Tzimmes</li>
+                        <li>Dessert — Compot, Ice Cream or Sorbet</li>
+                        <li>Tomato Dip, Chrein, Pickles, Coleslaw</li>
+                    </ul>
+
+                    <div class="meal-head">☀️ Day Meal</div>
+                    <ul class="dishes">
+                        <li>Salmon Fish &amp; Gefilte</li>
+                        <li>Eggs, Liver, Vegetables</li>
+                        <li>Chicken Cholent w/ Kishka</li>
+                        <li>Potato &amp; Luckyshen Kugel</li>
+                        <li>Assorted Cold Cuts</li>
+                        <li>Dessert — Compot, Ice Cream, Sorbet</li>
+                        <li>Tomato Dip, Chrein, Pickles, Coleslaw</li>
+                    </ul>
+
+                    <p class="note">Want to upgrade only 1 or 2 courses? Ask for separate upgrade prices.</p>
+                </div>
+
+                <!-- Option #2 Upgraded -->
+                <div class="menu-card reveal">
+                    <span class="badge">Option #2 – Upgraded</span>
+                    <p class="price-line">Price: Per Person</p>
+
+                    <div class="meal-head">🌙 Night Meal</div>
+                    <ul class="dishes">
+                        <li>Individual 3‑Section Dip Plate</li>
+                        <li>Salmon &amp; Gefilte with Spiral Beets &amp; Chrein – Chinese spoon</li>
+                        <li>Soup in crock w/ Knaidlech &amp; Luckyshen</li>
+                        <li>Onion Kugel, Chic Peas, Radish</li>
+                        <li>Capons or Chicken Rib Steak</li>
+                        <li>Individual Potato &amp; Luckyshen Kugel</li>
+                        <li>Piped Farfel &amp; Stem Carrots</li>
+                        <li>Dessert – Apple Cobbler, Rosette</li>
+                        <li>Ice Cream with Strawberry Sauce</li>
+                        <li class="muted">(Other dessert options available)</li>
+                    </ul>
+
+                    <div class="meal-head">☀️ Day Meal</div>
+                    <ul class="dishes">
+                        <li>Individual 3‑section Dip Plate</li>
+                        <li>Grilled Salmon, Fried Angel Hair Pasta &amp; Gefilte</li>
+                        <li>4‑Section Egg Plate – eggs, chopped liver, sautéed liver, tomato salad &amp; garnishing</li>
+                        <li>Cholent in crocks w/ Beef (optional) &amp; Kishka</li>
+                        <li>Assorted Cold Cuts</li>
+                        <li>Dessert – Sorbet Block &amp; Strawberry sauce</li>
+                        <li class="muted">(Other dessert options available)</li>
+                    </ul>
+
+                    <p class="note">
+                        🥤 Drinks included: Soda, Seltzer, Water &amp; Ice.<br>
+                        🍷 Grape Juice &amp; Wine <strong>not</strong> included.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ WEEKDAY MENU ═══════ -->
+        <section class="section tint" id="weekday">
+            <div class="wrap">
+                <div class="section-title reveal">
+                    <span class="eyebrow">Weekday</span>
+                    <h2>Weekday Menu</h2>
+                    <span class="accent-line"></span>
+                    <p>Appetizers, soups, mains, sides, and desserts — with clear per-person upgrade pricing.</p>
+                </div>
+
+                <div class="menu-card reveal">
+                    <div class="grid-2">
+                        <!-- APPETIZER -->
+                        <div class="menu-cat">
+                            <h5>Appetizer</h5>
+                            <ul>
+                                <li>Breaded Eggplant w/ Rice &amp; Vegetables</li>
+                                <li>Vegetable Filled Pastry w/ Sauce</li>
+                                <li>Vegetable Kugel</li>
+                                <li>Cabbage Eggroll</li>
+                                <li class="priced"><span>Gnocchis Shlishkes, Turkey, Mushrooms, w/ Gravy Sauce</span><span class="price">$2.50</span></li>
+                                <li><strong>Fish Plate</strong> – choose one fish &amp; side</li>
+                                <li class="priced"><span>Salmon</span><span class="price">$3.50</span></li>
+                                <li class="priced"><span>Tilapia</span><span class="price">$2.50</span></li>
+                                <li>Angel Hair Pasta Salad (side)</li>
+                            </ul>
+                        </div>
+
+                        <!-- SOUP -->
+                        <div class="menu-cat">
+                            <h5>Soup</h5>
+                            <ul>
+                                <li>Vegetable Soup</li>
+                                <li>Cream of Chicken Soup</li>
+                                <li>Butternut Squash Soup</li>
+                                <li>Cream of Mushroom Soup</li>
+                                <li>Squash Soup</li>
+                                <li>Onion Soup</li>
+                            </ul>
+                        </div>
+
+                        <!-- MAIN DISHES -->
+                        <div class="menu-cat">
+                            <h5>Main Dishes</h5>
+                            <ul>
+                                <li>Breaded Cutlets</li>
+                                <li>Grilled Cutlets</li>
+                                <li>Battered Cutlets</li>
+                                <li class="priced"><span>W/ Marsella Sauce</span><span class="price">$2.00</span></li>
+                                <li class="priced"><span>Pistachio Cutlets</span><span class="price">$2.00</span></li>
+                                <li class="priced"><span>Capons</span><span class="price">$3.50</span></li>
+                                <li class="priced"><span>Chicken Rib Steak</span><span class="price">$3.50</span></li>
+                                <li class="priced"><span>Tilapia Fish</span><span class="price">$2.00</span></li>
+                                <li class="priced"><span>Salmon Fish</span><span class="price">$4.00</span></li>
+                                <li class="priced"><span>Beef</span><span class="price">$8 &amp; up</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- STARCH SIDE DISH -->
+                        <div class="menu-cat">
+                            <h5>Starch Side Dish</h5>
+                            <ul>
+                                <li>Mashed Potatoes – choose topping</li>
+                                <li>Caramelized Onions / Sweet Potato Chips</li>
+                                <li>Tiny Cut Potatoes &amp; Sweet Potatoes</li>
+                                <li>Sliced Red &amp; White Potatoes</li>
+                                <li>Marble Potatoes</li>
+                                <li>Vegetable Orzo</li>
+                                <li>Spanish Rice</li>
+                                <li>String Beans w/ Almonds</li>
+                                <li>String Beans w/ Colored Peppers</li>
+                                <li>Sugar Snap Peas w/ Garlic &amp; Sesame Seeds</li>
+                                <li>Stir Fry Vegetable</li>
+                                <li>Broccoli</li>
+                                <li class="priced"><span>Mini Vegetables – Pepper, Squash &amp; Carrots</span><span class="price">$1.75</span></li>
+                                <li class="priced"><span>2 Color Vegetable Kugel</span><span class="price">$2.00</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- DESSERTS & BEVERAGES -->
+                        <div class="menu-cat cat-span">
+                            <h5>Desserts &amp; Beverages</h5>
+                            <ul>
+                                <li>Ice Cream w/ Sauce</li>
+                                <li>Sorbet w/ Sauce</li>
+                                <li class="priced"><span>Rosette Ice Cream or Sorbet</span><span class="price">$1</span></li>
+                                <li class="priced"><span>Apple Cobbler</span><span class="price">$1.75</span></li>
+                                <li class="priced"><span>Hot Brownie</span><span class="price">$1.75</span></li>
+                                <li class="priced"><span>Cut Up Fruits</span><span class="price">$1.75</span></li>
+                                <li class="priced"><span>Eclair</span><span class="price">$2.50</span></li>
+                                <li class="priced"><span>Irish Coffee or Tea</span><span class="price">$1.75</span></li>
+                                <li class="priced"><span><strong>Deluxe</strong></span><span class="price">$5 &amp; up</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p class="note">All items subject to availability. Custom orders welcome.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ CTA BAND ═══════ -->
+        <section class="ctaband">
+            <h2>Found your <em>menu?</em></h2>
+            <p>Build your order dish by dish, or reach out and we'll help you plan the perfect simcha.</p>
+            <div class="cta-row">
+                <a href="order.html" class="btn btn--gold btn--lg">Build Your Order</a>
+                <a href="contact.html" class="btn btn--ghost btn--lg">Contact Us</a>
+            </div>
+            <p class="phone-line">Prefer the phone? Call <a href="tel:+17188536100">718-853-6100</a></p>
+        </section>
+    </main>
+
+    <!-- ═══════ FOOTER ═══════ -->
+    <footer class="foot">
+        <div class="wrap foot-in">
+            <div>
+                <a class="brand" href="index.html">
+                    <svg class="logo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect width="48" height="48" rx="12" fill="#C8963E"/>
+                        <path d="M12 29a12 12 0 0 1 24 0z" fill="#1E5945"/>
+                        <circle cx="24" cy="14.5" r="2" fill="#E8D5B7"/>
+                        <path d="M10 31h28" stroke="#E8D5B7" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                    <span class="name">Rottenberg's <em>Catering</em></span>
+                </a>
+                <p>Premium heimish kosher catering for Shabbos, simchas, and weekday events — serving Brooklyn and the greater New York community.</p>
+            </div>
+            <div>
+                <h4>Explore</h4>
+                <a class="flink" href="about.html">About Us</a>
+                <a class="flink" href="menu.html">Menus</a>
+                <a class="flink" href="linens.html">Linens &amp; Colors</a>
+                <a class="flink" href="order.html">Build Your Order</a>
+                <a class="flink" href="contact.html">Contact</a>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <div class="contact-line">📞 <a href="tel:+17188536100">718-853-6100</a></div>
+                <div class="contact-line">✉️ <a href="mailto:rottenbergscatering@gmail.com">rottenbergscatering@gmail.com</a></div>
+                <div class="contact-line">📍 <span>264 Hewes St, Brooklyn, NY 11211</span></div>
+            </div>
+        </div>
+        <div class="wrap foot-bot">
+            <span>© <span class="js-year">2026</span> Rottenberg's Catering. All rights reserved. · Heimish • Elegant • Kosher</span>
+            <span>Designed &amp; built by <a href="https://bhwebsolutions.com" target="_blank" rel="noopener">BH Web Solutions</a></span>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+    <script src="assets/site.js"></script>
+</body>
+</html>

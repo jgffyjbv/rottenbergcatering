@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse Rottenberg's Catering linen &amp; napkin colors — the 100% polyester Basic Polyester Collection in dozens of shades, plus the textured Bark Collection. Fabric swatches available on request. Brooklyn, NY.">
+    <title>Linens &amp; Colors | Rottenberg's Catering — Brooklyn, NY</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%231E5945'/%3E%3Cpath d='M12 29a12 12 0 0 1 24 0z' fill='%23C8963E'/%3E%3Ccircle cx='24' cy='14.5' r='2' fill='%23E8D5B7'/%3E%3Cpath d='M10 31h28' stroke='%23E8D5B7' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        /* linens page extras */
+        .card .note { font-size: .9rem; color: var(--text-light); font-style: italic; margin-top: 18px; padding-top: 14px; border-top: 1px dotted var(--border); }
+        .bark-card { text-align: center; }
+        .bark-card .bark-img { max-width: 100%; height: auto; border-radius: 12px; margin: 20px 0; box-shadow: var(--shadow-md); }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════ HEADER ═══════ -->
+    <header class="site-header">
+        <div class="wrap hbar">
+            <a class="brand" href="index.html" aria-label="Rottenberg's Catering home">
+                <svg class="logo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect width="48" height="48" rx="12" fill="#1E5945"/>
+                    <path d="M12 29a12 12 0 0 1 24 0z" fill="#C8963E"/>
+                    <circle cx="24" cy="14.5" r="2" fill="#E8D5B7"/>
+                    <path d="M10 31h28" stroke="#E8D5B7" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+                <span class="name">Rottenberg's <em>Catering</em><small>Heimish · Elegant · Kosher</small></span>
+            </a>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menus</a>
+                <a href="linens.html">Linens &amp; Colors</a>
+                <a href="contact.html">Contact</a>
+                <a href="order.html" class="nav-order">Order Now</a>
+            </nav>
+            <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ═══════ PAGE HERO ═══════ -->
+        <div class="page-hero">
+            <h1>Linens <em>&amp; Colors</em></h1>
+            <p>100% Polyester – Basic Polyester Collection · Available colors only</p>
+            <span class="accent-line"></span>
+        </div>
+
+        <!-- ═══════ COLOR CHART ═══════ -->
+        <section class="section" id="color-chart">
+            <div class="wrap">
+                <div class="section-title reveal">
+                    <span class="eyebrow">Dress your tables</span>
+                    <h2>Linen &amp; Napkin Colors</h2>
+                    <span class="accent-line"></span>
+                </div>
+                <div class="card reveal" style="padding: 30px 24px;">
+                    <div class="color-grid">
+                        <!-- Neutrals / Yellows / Browns -->
+                        <div class="color-column-label">Neutrals · Yellows · Browns</div>
+                        <div class="color-swatch" onclick="openColorModal('#FFFFF0', 'Ivory')"><div class="dot" style="background:#FFFFF0;"></div><span class="name">Ivory</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#D2B48C', 'Tan')"><div class="dot" style="background:#D2B48C;"></div><span class="name">Tan</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#C19A6B', 'Camel')"><div class="dot" style="background:#C19A6B;"></div><span class="name">Camel</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#FBEC5D', 'Maize')"><div class="dot" style="background:#FBEC5D;"></div><span class="name">Maize</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#FFF700', 'Lemon')"><div class="dot" style="background:#FFF700;"></div><span class="name">Lemon</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#DAA520', 'Goldenrod')"><div class="dot" style="background:#DAA520;"></div><span class="name">Goldenrod</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#808000', 'Olive')"><div class="dot" style="background:#808000;"></div><span class="name">Olive</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#FFCBA4', 'Peach')"><div class="dot" style="background:#FFCBA4;"></div><span class="name">Peach</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#FF7F50', 'Coral')"><div class="dot" style="background:#FF7F50;"></div><span class="name">Coral</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#FFA500', 'Orange')"><div class="dot" style="background:#FFA500;"></div><span class="name">Orange</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#CC5500', 'Burnt Orange')"><div class="dot" style="background:#CC5500;"></div><span class="name">Burnt Orange</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#7B3F00', 'Chocolate')"><div class="dot" style="background:#7B3F00;"></div><span class="name">Chocolate</span></div>
+
+                        <!-- Greens / Blues -->
+                        <div class="color-column-label">Greens · Blues</div>
+                        <div class="color-swatch" onclick="openColorModal('#98FF98', 'Mint')"><div class="dot" style="background:#98FF98;"></div><span class="name">Mint</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#008080', 'Teal')"><div class="dot" style="background:#008080;"></div><span class="name">Teal</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#32CD32', 'Lime')"><div class="dot" style="background:#32CD32;"></div><span class="name">Lime</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#4CBB17', 'Kelly')"><div class="dot" style="background:#4CBB17;"></div><span class="name">Kelly</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#355E3B', 'Hunter')"><div class="dot" style="background:#355E3B;"></div><span class="name">Hunter</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#228B22', 'Forest')"><div class="dot" style="background:#228B22;"></div><span class="name">Forest</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#ADD8E6', 'Light Blue')"><div class="dot" style="background:#ADD8E6;"></div><span class="name">Light Blue</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#4169E1', 'Royal')"><div class="dot" style="background:#4169E1;"></div><span class="name">Royal</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#000080', 'Navy')"><div class="dot" style="background:#000080;"></div><span class="name">Navy</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#191970', 'Midnight')"><div class="dot" style="background:#191970;"></div><span class="name">Midnight</span></div>
+
+                        <!-- Pinks / Reds / Purples / Greys -->
+                        <div class="color-column-label">Pinks · Reds · Purples · Greys</div>
+                        <div class="color-swatch" onclick="openColorModal('#FFB6C1', 'Light Pink')"><div class="dot" style="background:#FFB6C1;"></div><span class="name">Light Pink</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#FFB3DE', 'Pink Balloon')"><div class="dot" style="background:#FFB3DE;"></div><span class="name">Pink Balloon</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#E0B0FF', 'Mauve')"><div class="dot" style="background:#E0B0FF;"></div><span class="name">Mauve</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#FF69B4', 'Hot Pink')"><div class="dot" style="background:#FF69B4;"></div><span class="name">Hot Pink</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#E30B5C', 'Raspberry')"><div class="dot" style="background:#E30B5C;"></div><span class="name">Raspberry</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#3D0734', 'Aubergine')"><div class="dot" style="background:#3D0734;"></div><span class="name">Aubergine</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#800020', 'Burgundy')"><div class="dot" style="background:#800020;"></div><span class="name">Burgundy</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#DC143C', 'Holiday Red')"><div class="dot" style="background:#DC143C;"></div><span class="name">Holiday Red</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#C8A2C8', 'Lilac')"><div class="dot" style="background:#C8A2C8;"></div><span class="name">Lilac</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#8E4585', 'Plum')"><div class="dot" style="background:#8E4585;"></div><span class="name">Plum</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#800080', 'Purple')"><div class="dot" style="background:#800080;"></div><span class="name">Purple</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#C0C0C0', 'Silver')"><div class="dot" style="background:#C0C0C0;"></div><span class="name">Silver</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#36454F', 'Charcoal')"><div class="dot" style="background:#36454F;"></div><span class="name">Charcoal</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#000000', 'Black')"><div class="dot" style="background:#000000;"></div><span class="name">Black</span></div>
+                        <div class="color-swatch" onclick="openColorModal('#FFFFFF', 'White')"><div class="dot" style="background:#FFFFFF;"></div><span class="name">White</span></div>
+                    </div>
+                    <p class="note" style="text-align:center;margin-top:20px;">
+                        Click any color to enlarge.<br>Actual fabric swatches available for viewing upon request.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ BARK COLLECTION ═══════ -->
+        <section class="section tint" id="bark">
+            <div class="wrap">
+                <div class="section-title reveal">
+                    <span class="eyebrow">Colors with designs</span>
+                    <h2>Bark Collection</h2>
+                    <span class="accent-line"></span>
+                </div>
+                <div class="card bark-card reveal">
+                    <h3>🌿 Textured Bark Fabrics</h3>
+                    <img class="bark-img" src="bark.png" alt="Bark Collection Fabric Design" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <p style="display:none; color:var(--text-light);">Bark Collection swatches available for viewing — call us at 718-853-6100 or inquire below.</p>
+                    <p style="color:var(--text-light);">A premium selection of linen patterns inspired by natural bark textures. Available in complementary colors to elevate your table setting.</p>
+                    <p class="note">Inquire for swatch samples and availability.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ CTA BAND ═══════ -->
+        <section class="ctaband">
+            <h2>Found your <em>colors?</em></h2>
+            <p>Choose your linen and napkin colors right on the order form when you build your order — dish by dish, table by table.</p>
+            <div class="cta-row">
+                <a href="order.html" class="btn btn--gold btn--lg">Build Your Order</a>
+                <a href="contact.html" class="btn btn--ghost btn--lg">Ask About Swatches</a>
+            </div>
+            <p class="phone-line">Prefer the phone? Call <a href="tel:+17188536100">718-853-6100</a></p>
+        </section>
+    </main>
+
+    <!--  Color Modal Overlay -->
+    <div id="colorModal" class="color-modal" onclick="closeColorModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="big-dot" id="modalBigDot" style="background:#fff;"></div>
+            <div class="modal-name" id="modalName"></div>
+            <button class="btn btn--green close-btn" onclick="closeColorModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- ═══════ FOOTER ═══════ -->
+    <footer class="foot">
+        <div class="wrap foot-in">
+            <div>
+                <a class="brand" href="index.html">
+                    <svg class="logo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect width="48" height="48" rx="12" fill="#C8963E"/>
+                        <path d="M12 29a12 12 0 0 1 24 0z" fill="#1E5945"/>
+                        <circle cx="24" cy="14.5" r="2" fill="#E8D5B7"/>
+                        <path d="M10 31h28" stroke="#E8D5B7" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                    <span class="name">Rottenberg's <em>Catering</em></span>
+                </a>
+                <p>Premium heimish kosher catering for Shabbos, simchas, and weekday events — serving Brooklyn and the greater New York community.</p>
+            </div>
+            <div>
+                <h4>Explore</h4>
+                <a class="flink" href="about.html">About Us</a>
+                <a class="flink" href="menu.html">Menus</a>
+                <a class="flink" href="linens.html">Linens &amp; Colors</a>
+                <a class="flink" href="order.html">Build Your Order</a>
+                <a class="flink" href="contact.html">Contact</a>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <div class="contact-line">📞 <a href="tel:+17188536100">718-853-6100</a></div>
+                <div class="contact-line">✉️ <a href="mailto:rottenbergscatering@gmail.com">rottenbergscatering@gmail.com</a></div>
+                <div class="contact-line">📍 <span>264 Hewes St, Brooklyn, NY 11211</span></div>
+            </div>
+        </div>
+        <div class="wrap foot-bot">
+            <span>© <span class="js-year">2026</span> Rottenberg's Catering. All rights reserved. · Heimish • Elegant • Kosher</span>
+            <span>Designed &amp; built by <a href="https://bhwebsolutions.com" target="_blank" rel="noopener">BH Web Solutions</a></span>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+    <script src="assets/site.js"></script>
+</body>
+</html>

@@ -3,1104 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rottenberg's Catering – Premium Kosher Catering for Shabbos, Weekday events & Simchas. Menus, linen colors, and more.">
-    <title>Rottenberg's Catering | Kosher Catering</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="description" content="Rottenberg's Catering — premium heimish kosher catering in Brooklyn, NY. Shabbos menus, weekday simchas, elegant linens, and full-service events. Call 718-853-6100.">
+    <title>Rottenberg's Catering | Premium Kosher Catering — Brooklyn, NY</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%231E5945'/%3E%3Cpath d='M12 29a12 12 0 0 1 24 0z' fill='%23C8963E'/%3E%3Ccircle cx='24' cy='14.5' r='2' fill='%23E8D5B7'/%3E%3Cpath d='M10 31h28' stroke='%23E8D5B7' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
     <style>
-        :root {
-            --bg: #FAF8F3;  /* Bright warm ivory */
-            --white: #ffffff;
-            --gold: #C8963E;
-            --gold-light: #E8D5B7;
-            --gold-pale: #F7EFE2;
-            --charcoal: #2E2E2E;
-            --text: #4A4A4A;
-            --text-light: #6B6B6B;
-            --border: #E5DED2;
-            --accent: #1E5945;  /* Emerald */
-            --shadow-sm: 0 2px 10px rgba(0,0,0,0.05);
-            --shadow-md: 0 8px 30px rgba(0,0,0,0.08);
-            --shadow-lg: 0 15px 45px rgba(0,0,0,0.12);
-            --radius: 16px;
-            --transition: 0.3s ease;
-            --font-heading: 'Fraunces', 'Georgia', serif;
-            --font-body: 'Inter', 'Segoe UI', sans-serif;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-
-        body {
-            font-family: var(--font-body);
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* ─── NAVIGATION ────────────────────── */
-        .nav-bar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-            padding: 0 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            min-height: 60px;
-            box-shadow: var(--shadow-sm);
-        }
-        .nav-bar a {
-            display: inline-block;
-            padding: 10px 18px;
-            text-decoration: none;
-            color: var(--charcoal);
-            font-weight: 500;
-            font-size: 0.95rem;
-            border-radius: 30px;
-            transition: var(--transition);
-            white-space: nowrap;
-            letter-spacing: 0.02em;
-            border: 1px solid transparent;
-        }
-        .nav-bar a:hover,
-        .nav-bar a:focus-visible {
-            background: var(--gold-pale);
-            color: var(--accent);
-            border-color: var(--gold-light);
-            outline: none;
-        }
-        .nav-bar a.nav-cta {
-            background: var(--accent);
-            color: #fff;
-            font-weight: 600;
-            border-color: var(--accent);
-            padding: 10px 24px;
-        }
-        .nav-bar a.nav-cta:hover {
-            background: #163D2B;
-            border-color: #163D2B;
-            color: #fff;
-        }
-
-        /* NEW: Order button in nav – gold and eye-catching */
-        .nav-bar a.nav-order {
-            background: var(--gold);
-            color: #fff;
-            font-weight: 700;
-            border-color: var(--gold);
-            padding: 10px 24px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-        .nav-bar a.nav-order:hover {
-            background: #B8860B;
-            border-color: #B8860B;
-            color: #fff;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-
-        /* ─── HERO ──────────────────────────── */
+        /* home hero */
         .hero {
-            text-align: center;
-            padding: clamp(130px,20vh,200px) 20px clamp(110px,15vh,160px);
-            background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-            position: relative;
-            overflow: hidden;
+            text-align: center; position: relative; overflow: hidden;
+            padding: clamp(120px, 18vh, 190px) 20px clamp(100px, 14vh, 150px);
+            background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat, var(--accent-deep);
         }
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(13,38,28,.70) 0%, rgba(13,38,28,.54) 42%, rgba(13,38,28,.88) 100%);
+        .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,38,28,.72) 0%, rgba(13,38,28,.55) 42%, rgba(13,38,28,.88) 100%); }
+        .hero::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 5px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+        .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+        .hero .eyebrow {
+            display: inline-block; color: var(--gold-light); font-size: .8rem; font-weight: 700;
+            letter-spacing: .26em; text-transform: uppercase; margin-bottom: 20px;
         }
-        .hero::after {
-            content: '';
-            position: absolute;
-            left: 0; right: 0; bottom: 0; height: 5px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        }
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 780px;
-            margin: 0 auto;
-        }
-        .hero h1 {
-            font-family: var(--font-heading);
-            font-size: clamp(3rem, 7.5vw, 5.2rem);
-            color: #fff;
-            letter-spacing: -0.02em;
-            line-height: 1.02;
-            margin-bottom: 16px;
-            font-weight: 600;
-        }
-        .hero h1 span {
-            display: block;
-            color: var(--gold-light);
-            font-style: italic;
-            font-weight: 500;
-        }
-        .hero .tagline {
-            font-size: clamp(1.1rem, 2vw, 1.35rem);
-            color: rgba(255,255,255,.92);
-            margin-bottom: 12px;
-            line-height: 1.5;
-        }
-        .hero .sub-tagline {
-            font-size: 0.82rem;
-            color: var(--gold-light);
-            letter-spacing: 0.24em;
-            text-transform: uppercase;
-            margin-bottom: 2.4rem;
-        }
-        .hero-cta {
-            display: flex;
-            gap: 14px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .hero-btn {
-            display: inline-block;
-            padding: 15px 32px;
-            border-radius: 40px;
-            font-weight: 700;
-            font-size: 1rem;
-            text-decoration: none;
-            letter-spacing: .02em;
-            transition: var(--transition);
-            border: 2px solid transparent;
-        }
-        .hero-btn--gold { background: var(--gold); color: #fff; box-shadow: 0 12px 30px rgba(200,150,62,.4); }
-        .hero-btn--gold:hover { background: #d9a84c; transform: translateY(-3px); box-shadow: 0 18px 40px rgba(200,150,62,.5); }
-        .hero-btn--ghost { background: rgba(255,255,255,.08); color: #fff; border-color: rgba(255,255,255,.55); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
-        .hero-btn--ghost:hover { background: #fff; color: var(--accent); transform: translateY(-3px); }
-        .hero h1, .hero .tagline, .hero .sub-tagline, .hero-cta {
-            opacity: 0;
-            animation: heroUp .9s cubic-bezier(.22,1,.36,1) forwards;
-        }
-        .hero .tagline { animation-delay: .12s; }
-        .hero .sub-tagline { animation-delay: .22s; }
-        .hero-cta { animation-delay: .34s; }
+        .hero h1 { font-size: clamp(3rem, 7.5vw, 5.2rem); color: #fff; line-height: 1.02; margin-bottom: 16px; }
+        .hero h1 span { display: block; color: var(--gold-light); font-style: italic; font-weight: 500; }
+        .hero .tagline { font-size: clamp(1.1rem, 2vw, 1.3rem); color: rgba(255,255,255,.92); margin-bottom: 34px; }
+        .hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .hero-trust { display: flex; gap: 10px 26px; justify-content: center; flex-wrap: wrap; margin-top: 34px; }
+        .hero-trust span { color: rgba(255,255,255,.85); font-weight: 600; font-size: .92rem; display: flex; align-items: center; gap: 8px; }
+        .hero-trust span::before { content: '✦'; color: var(--gold); }
+        .hero .eyebrow, .hero h1, .hero .tagline, .hero-cta, .hero-trust { opacity: 0; animation: heroUp .9s cubic-bezier(.22,1,.36,1) forwards; }
+        .hero h1 { animation-delay: .06s; } .hero .tagline { animation-delay: .16s; }
+        .hero-cta { animation-delay: .28s; } .hero-trust { animation-delay: .4s; }
         @keyframes heroUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
-        .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1); }
-        .reveal.in { opacity: 1; transform: none; }
-        @media (prefers-reduced-motion: reduce) { .reveal, .hero h1, .hero .tagline, .hero .sub-tagline, .hero-cta { opacity: 1 !important; transform: none !important; animation: none !important; } }
+        @media (prefers-reduced-motion: reduce) { .hero .eyebrow, .hero h1, .hero .tagline, .hero-cta, .hero-trust { opacity: 1 !important; animation: none !important; } }
 
-        /* ─── SECTION STYLES ────────────────── */
-        .section {
-            padding: 80px 20px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        .section-title h2 {
-            font-family: var(--font-heading);
-            font-size: 2.5rem;
-            color: var(--charcoal);
-            letter-spacing: -0.01em;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        .section-title .accent-line {
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: var(--gold);
-            margin: 12px auto 0;
-            border-radius: 2px;
-        }
-        .section-subtitle {
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-light);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-bottom: 40px;
-        }
-
-        /* ─── CARDS ─────────────────────────── */
-        .card {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 40px 36px;
-            margin-bottom: 30px;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border);
-            transition: var(--transition);
-        }
-        .card:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-4px);
-            border-color: var(--gold-light);
-        }
-        .card h3 {
-            font-family: var(--font-heading);
-            font-size: 1.4rem;
-            color: var(--accent);
-            margin-bottom: 20px;
-            font-weight: 700;
-            border-bottom: 2px solid var(--gold-pale);
-            padding-bottom: 12px;
-        }
-        .card h4 {
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #1E5945;
-            margin: 24px 0 10px;
-            font-weight: 700;
-        }
-        .card ul {
-            list-style: none;
-            padding: 0;
-        }
-        .card ul li {
-            padding: 8px 0;
-            padding-left: 24px;
-            position: relative;
-            font-size: 1rem;
-            color: var(--text);
-            letter-spacing: 0.01em;
-        }
-        .card ul li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--gold);
-            font-weight: bold;
-            font-size: 1.2rem;
-            line-height: 1;
-            top: 9px;
-        }
-        .card .price-note {
-            display: inline-block;
-            background: var(--gold-pale);
-            color: var(--accent);
-            padding: 8px 18px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 24px;
-            letter-spacing: 0.03em;
-        }
-        .card .note {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            font-style: italic;
-            margin-top: 18px;
-            padding-top: 14px;
-            border-top: 1px dotted var(--border);
-        }
-        .separator {
-            border: none;
-            border-top: 1px dashed var(--border);
-            margin: 28px 0;
-        }
-        .day-meal-header {
-            font-family: var(--font-heading);
-            font-size: 1.2rem;
-            color: var(--accent);
-            margin: 28px 0 12px;
-            font-weight: 700;
-            border-bottom: 2px solid var(--gold-pale);
-            padding-bottom: 8px;
-            text-align: left;
-        }
-
-        /* ─── COLLAPSIBLE MENU TOGGLE ───────── */
-        .collapsible-toggle {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            user-select: none;
-        }
-        .collapsible-toggle .toggle-arrow {
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
-        }
-        .card.collapsed .collapsible-content {
-            display: none;
-        }
-        .card.collapsed .toggle-arrow {
-            transform: rotate(-90deg);
-        }
-
-        /* ─── TWO COLUMN LAYOUT ─────────────── */
-        .two-col {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
-        }
-        @media (max-width: 700px) {
-            .two-col { grid-template-columns: 1fr; }
-        }
-
-        /* ─── WEEKDAY MENU SPECIFIC ─────────── */
-        .weekday-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-        .weekday-category {
-            margin-bottom: 12px;
-        }
-        .weekday-category h5 {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--accent);
-            margin-bottom: 6px;
-            font-weight: 700;
-            border-bottom: 2px solid var(--gold-pale);
-            padding-bottom: 6px;
-        }
-        .weekday-category li {
-            display: flex;
-            justify-content: space-between;
-            padding: 5px 0;
-            border-bottom: 1px dotted #F0EAD6;
-            font-size: 0.95rem;
-        }
-        .weekday-category li span.dish { font-weight: 500; }
-        .weekday-category li span.price {
-            color: var(--accent);
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-        @media (max-width: 600px) {
-            .weekday-grid { grid-template-columns: 1fr; }
-        }
-
-        /* ─── COLOR SWATCH GRID ─────────────── */
-        .color-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-            gap: 18px;
-        }
-        .color-swatch {
-            text-align: center;
-            background: #fff;
-            border-radius: var(--radius);
-            padding: 20px 8px 16px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            cursor: pointer;
-        }
-        .color-swatch:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-        .color-swatch .dot {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin: 0 auto 12px;
-            border: 2px solid #eee;
-            box-shadow: inset 0 2px 6px rgba(0,0,0,0.08);
-        }
-        .color-swatch .name {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            letter-spacing: 0.03em;
-            font-weight: 500;
-            line-height: 1.3;
-            word-break: break-word;
-        }
-        .color-column-label {
-            grid-column: 1 / -1;
-            text-align: center;
-            font-weight: 700;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: #6B6B6B;
-            margin: 16px 0 8px;
-            padding-top: 14px;
-            border-top: 1px solid var(--border);
-        }
-        .color-column-label:first-of-type {
-            border-top: none;
-            margin-top: 0;
-            padding-top: 0;
-        }
-
-        /* ─── COLOR MODAL ───────────────────── */
-        .color-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            z-index: 10000;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            backdrop-filter: blur(6px);
-        }
-        .color-modal.active { display: flex; }
-        .color-modal .modal-content {
-            background: #fff;
-            border-radius: var(--radius);
-            padding: 45px;
-            text-align: center;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.3);
-            max-width: 350px;
-            width: 90%;
-        }
-        .color-modal .big-dot {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            margin: 0 auto 24px;
-            border: 4px solid #eee;
-            box-shadow: inset 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .color-modal .modal-name {
-            font-family: var(--font-heading);
-            font-size: 1.6rem;
-            color: var(--charcoal);
-            margin-bottom: 24px;
-            font-weight: 700;
-        }
-        .color-modal .close-btn {
-            margin-top: 20px;
-            background: var(--accent);
-            color: #fff;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        .color-modal .close-btn:hover {
-            background: #163D2B;
-        }
-
-        /* ─── CONTACT FORM SECTION ───────────── */
-        .contact-section {
-            background: #2E2E2E;
-            color: #ddd;
-            padding: 70px 20px;
-            text-align: center;
-        }
-        .contact-section h2 {
-            font-family: var(--font-heading);
-            font-size: 2.2rem;
-            color: #fff;
-            margin-bottom: 25px;
-            font-weight: 700;
-        }
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto 35px;
-            text-align: left;
-        }
-        .contact-form .form-group { margin-bottom: 22px; }
-        .contact-form label {
-            display: block;
-            color: #ccc;
-            font-weight: 500;
-            margin-bottom: 6px;
-            font-size: 0.95rem;
-        }
-        .contact-form input,
-        .contact-form select,
-        .contact-form textarea {
-            width: 100%;
-            padding: 14px 16px;
-            border-radius: 8px;
-            background: #fff;
-            border: 2px solid #ccc;
-            font-family: var(--font-body);
-            font-size: 1rem;
-            transition: border-color 0.2s ease;
-        }
-        .contact-form input:focus,
-        .contact-form select:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--gold);
-        }
-        .contact-form textarea { resize: vertical; min-height: 110px; }
-        .contact-form .btn-submit {
-            background: var(--accent);
-            color: #fff;
-            border: none;
-            padding: 16px 36px;
-            border-radius: 30px;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition);
-            display: inline-block;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .contact-form .btn-submit:hover {
-            background: #163D2B;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-        .form-success {
-            display: none;
-            color: #d4edda;
-            background: #155724;
-            padding: 14px 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-        .honeypot-field {
-            position: absolute;
-            left: -9999px;
-            top: -9999px;
-        }
-        .contact-info-compact {
-            margin-top: 35px;
-            font-size: 0.95rem;
-            color: #bbb;
-            text-align: center;
-        }
-        .contact-info-compact a {
-            color: var(--gold-light);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        .contact-info-compact a:hover { text-decoration: underline; }
-        .footer-note {
-            font-size: 0.85rem;
-            color: #888;
-            margin-top: 18px;
-            letter-spacing: 0.03em;
-        }
-        .contact-address {
-            font-size: 0.95rem;
-            color: #bbb;
-            margin-top: 10px;
-            letter-spacing: 0.02em;
-        }
-
-        /* ─── BACK TO TOP ───────────────────── */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 999;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--accent);
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            font-size: 1.4rem;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            opacity: 0;
-            pointer-events: none;
-            transform: translateY(10px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .back-to-top.visible {
-            opacity: 1;
-            pointer-events: auto;
-            transform: translateY(0);
-        }
-        .back-to-top:hover {
-            background: #163D2B;
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-3px);
-        }
-
-        /* ─── RESPONSIVE ────────────────────── */
-        @media (max-width: 600px) {
-            .nav-bar { gap: 4px; padding: 6px 10px; }
-            .nav-bar a { padding: 8px 12px; font-size: 0.78rem; border-radius: 20px; }
-            .hero { padding: 80px 16px 60px; }
-            .hero h1 { font-size: 2rem; }
-            .section { padding: 50px 14px; }
-            .card { padding: 24px 18px; }
-            .color-grid { grid-template-columns: repeat(auto-fill, minmax(85px, 1fr)); gap: 12px; }
-            .color-swatch .dot { width: 45px; height: 45px; }
-            .color-swatch .name { font-size: 0.7rem; }
-            .two-col, .weekday-grid { grid-template-columns: 1fr; }
-        }
-        @media print {
-            .nav-bar, .back-to-top, .color-modal { display: none; }
-            body { background: #fff; color: #000; }
-            .card { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
-        }
+        /* menu teaser cards */
+        .teaser { position: relative; overflow: hidden; display: flex; flex-direction: column; }
+        .teaser .teaser-top { height: 6px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); border-radius: 4px 4px 0 0; margin: -38px -34px 26px; }
+        .teaser ul { list-style: none; padding: 0; margin: 6px 0 20px; }
+        .teaser ul li { padding: 6px 0 6px 22px; position: relative; color: var(--text); font-size: .95rem; border-bottom: 1px dotted #F0EAD6; }
+        .teaser ul li:last-child { border-bottom: none; }
+        .teaser ul li::before { content: '•'; position: absolute; left: 2px; color: var(--gold); font-weight: 700; }
+        .teaser .btn { margin-top: auto; align-self: flex-start; }
+        @media (max-width: 760px) { .teaser .teaser-top { margin: -26px -20px 20px; } }
     </style>
 </head>
 <body>
 
-    <!-- ═══════ NAVIGATION ═══════ -->
-    <nav class="nav-bar" aria-label="Page navigation">
-        <a href="#hero">Home</a>
-        <a href="#shabbos-menu">Shabbos</a>
-        <a href="#weekday-menu">Weekday</a>
-        <a href="#color-chart">Colors</a>
-        <a href="#bark">Bark Collection</a>
-        <a href="#contact" class="nav-cta">Contact</a>
-        <a href="order.html" class="nav-order">Order Now</a>
-    </nav>
-
-    <!-- ═══════ HERO ═══════ -->
-    <header class="hero" id="hero">
-        <div class="hero-content">
-            <h1>Rottenberg's <span>Catering</span></h1>
-            <p class="tagline">Premium Kosher Catering for Shabbos, Weekday Simchas &amp; Events</p>
-            <p class="sub-tagline">Heimish • Elegant • Unforgettable</p>
-            <div class="hero-cta">
-                <a href="#shabbos-menu" class="hero-btn hero-btn--gold">View Our Menus</a>
-                <a href="order.html" class="hero-btn hero-btn--ghost">Order Now</a>
-            </div>
+    <!-- ═══════ HEADER ═══════ -->
+    <header class="site-header">
+        <div class="wrap hbar">
+            <a class="brand" href="index.html" aria-label="Rottenberg's Catering home">
+                <svg class="logo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect width="48" height="48" rx="12" fill="#1E5945"/>
+                    <path d="M12 29a12 12 0 0 1 24 0z" fill="#C8963E"/>
+                    <circle cx="24" cy="14.5" r="2" fill="#E8D5B7"/>
+                    <path d="M10 31h28" stroke="#E8D5B7" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+                <span class="name">Rottenberg's <em>Catering</em><small>Heimish · Elegant · Kosher</small></span>
+            </a>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menus</a>
+                <a href="linens.html">Linens &amp; Colors</a>
+                <a href="contact.html">Contact</a>
+                <a href="order.html" class="nav-order">Order Now</a>
+            </nav>
+            <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
         </div>
     </header>
 
-    <!-- ═══════ SHABBOS MENU ═══════ -->
-    <section class="section" id="shabbos-menu">
-        <div class="section-title">
-            <h2>Shabbos Menu</h2>
-            <span class="accent-line"></span>
-        </div>
-        <p class="section-subtitle">Heimish Challos available upon request</p>
+    <main>
+        <!-- ═══════ HERO ═══════ -->
+        <section class="hero">
+            <div class="hero-content">
+                <span class="eyebrow">Premium Kosher Catering — Brooklyn, NY</span>
+                <h1>Rottenberg's <span>Catering</span></h1>
+                <p class="tagline">Heimish taste, elegant presentation — for Shabbos, simchas, and every event worth celebrating.</p>
+                <div class="hero-cta">
+                    <a href="menu.html" class="btn btn--gold btn--lg">View Our Menus</a>
+                    <a href="order.html" class="btn btn--ghost btn--lg">Order Now</a>
+                </div>
+                <div class="hero-trust">
+                    <span>Heimish cooking</span>
+                    <span>Elegant table settings</span>
+                    <span>Full-service catering</span>
+                </div>
+            </div>
+        </section>
 
-        <!-- Option #1 Standard -->
-        <div class="card">
-            <div class="collapsible-toggle" onclick="this.closest('.card').classList.toggle('collapsed')">
-                <span class="price-note" style="margin-bottom:0;">Option #1 – Standard</span>
-                <span class="toggle-arrow">▼</span>
-            </div>
-            <div class="collapsible-content">
-                <p style="font-size:0.95rem;color:var(--text-light);margin-top:12px;margin-bottom:18px;">Price: Per Person</p>
-                <!-- Night Meal -->
-                <h4>Night Meal</h4>
-                <ul>
-                    <li>Salmon Fish &amp; Gefilte</li>
-                    <li>Soup with Knaidlech &amp; Luckyshen</li>
-                    <li>Chic Peas &amp; Radish</li>
-                    <li>Breaded or Baked Chicken</li>
-                    <li>Potato Kugel, Farfel &amp; Tzimmes</li>
-                    <li>Dessert — Compot, Ice Cream or Sorbet</li>
-                    <li>Tomato Dip, Chrein, Pickles, Coleslaw</li>
-                </ul>
-                <hr class="separator">
-                <!-- Day Meal -->
-                <div class="day-meal-header">Day Meal</div>
-                <ul>
-                    <li>Salmon Fish &amp; Gefilte</li>
-                    <li>Eggs, Liver, Vegetables</li>
-                    <li>Chicken Cholent w/ Kishka</li>
-                    <li>Potato &amp; Luckyshen Kugel</li>
-                    <li>Assorted Cold Cuts</li>
-                    <li>Dessert — Compot, Ice Cream, Sorbet</li>
-                    <li>Tomato Dip, Chrein, Pickles, Coleslaw</li>
-                </ul>
-                <p class="note">Want to upgrade only 1 or 2 courses? Ask for separate upgrade prices.</p>
-            </div>
-        </div>
-
-        <!-- Option #2 Upgraded -->
-        <div class="card">
-            <div class="collapsible-toggle" onclick="this.closest('.card').classList.toggle('collapsed')">
-                <span class="price-note" style="margin-bottom:0;">Option #2 – Upgraded</span>
-                <span class="toggle-arrow">▼</span>
-            </div>
-            <div class="collapsible-content">
-                <p style="font-size:0.95rem;color:var(--text-light);margin-top:12px;margin-bottom:18px;">Price: Per Person</p>
-                <!-- Night Meal -->
-                <h4>Night Meal</h4>
-                <ul>
-                    <li>Individual 3‑Section Dip Plate</li>
-                    <li>Salmon &amp; Gefilte with Spiral Beets &amp; Chrein – Chinese spoon</li>
-                    <li>Soup in crock w/ Knaidlech &amp; Luckyshen</li>
-                    <li>Onion Kugel, Chic Peas, Radish</li>
-                    <li>Capons or Chicken Rib Steak</li>
-                    <li>Individual Potato &amp; Luckyshen Kugel</li>
-                    <li>Piped Farfel &amp; Stem Carrots</li>
-                    <li>Dessert – Apple Cobbler, Rosette</li>
-                    <li>Ice Cream with Strawberry Sauce</li>
-                    <li style="color:#999;">(Other dessert options available)</li>
-                </ul>
-                <hr class="separator">
-                <!-- Day Meal -->
-                <div class="day-meal-header">Day Meal</div>
-                <ul>
-                    <li>Individual 3‑section Dip Plate</li>
-                    <li>Grilled Salmon, Fried Angel Hair Pasta &amp; Gefilte</li>
-                    <li>4‑Section Egg Plate – eggs, chopped liver, sautéed liver, tomato salad &amp; garnishing</li>
-                    <li>Cholent in crocks w/ Beef (optional) &amp; Kishka</li>
-                    <li>Assorted Cold Cuts</li>
-                    <li>Dessert – Sorbet Block &amp; Strawberry sauce</li>
-                    <li style="color:#999;">(Other dessert options available)</li>
-                </ul>
-                <p class="note">
-                    🥤 Drinks included: Soda, Seltzer, Water &amp; Ice.<br>
-                    🍷 Grape Juice &amp; Wine <strong>not</strong> included.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════ WEEKDAY MENU ═══════ -->
-    <section class="section" id="weekday-menu">
-        <div class="section-title">
-            <h2>Weekday Menu</h2>
-            <span class="accent-line"></span>
-        </div>
-        <div class="card">
-            <div class="collapsible-toggle" onclick="this.closest('.card').classList.toggle('collapsed')">
-                <h3 style="border-bottom:none; padding-bottom:0; margin-bottom:0;">Weekday Selections</h3>
-                <span class="toggle-arrow">▼</span>
-            </div>
-            <div class="collapsible-content">
-                <div class="weekday-grid" style="margin-top:20px;">
-                    <!-- APPETIZERS -->
-                    <div class="weekday-category">
-                        <h5>Appetizer</h5>
-                        <ul>
-                            <li><span class="dish">Breaded Eggplant w/ Rice &amp; Vegetables</span><span class="price"></span></li>
-                            <li><span class="dish">Vegetable Filled Pastry w/ Sauce</span><span class="price"></span></li>
-                            <li><span class="dish">Vegetable Kugel</span><span class="price"></span></li>
-                            <li><span class="dish">Cabbage Eggroll</span><span class="price"></span></li>
-                            <li><span class="dish">Gnocchis Shlishkes, Turkey, Mushrooms, w/ Gravy Sauce</span><span class="price">2.50</span></li>
-                            <li style="margin-top:6px;"><span class="dish"><strong>Fish Plate</strong> – choose one fish &amp; side</span></li>
-                            <li><span class="dish">Salmon</span><span class="price">3.50</span></li>
-                            <li><span class="dish">Tilapia</span><span class="price">2.50</span></li>
-                            <li><span class="dish">Angel Hair Pasta Salad (side)</span><span class="price"></span></li>
-                        </ul>
+        <!-- ═══════ WELCOME ═══════ -->
+        <section class="section">
+            <div class="wrap split reveal">
+                <div>
+                    <div class="section-title" style="text-align:left; margin-bottom:18px;">
+                        <span class="eyebrow">Welcome</span>
+                        <h2>A simcha tastes better<br>when it's heimish</h2>
                     </div>
-
-                    <!-- SOUPS -->
-                    <div class="weekday-category">
-                        <h5>Soup</h5>
-                        <ul>
-                            <li><span class="dish">Vegetable Soup</span></li>
-                            <li><span class="dish">Cream of Chicken Soup</span></li>
-                            <li><span class="dish">Butternut Squash Soup</span></li>
-                            <li><span class="dish">Cream of Mushroom Soup</span></li>
-                            <li><span class="dish">Squash Soup</span></li>
-                            <li><span class="dish">Onion Soup</span></li>
-                        </ul>
-                    </div>
-
-                    <!-- MAIN DISHES -->
-                    <div class="weekday-category">
-                        <h5>Main Dishes</h5>
-                        <ul>
-                            <li><span class="dish">Breaded Cutlets</span></li>
-                            <li><span class="dish">Grilled Cutlets</span></li>
-                            <li><span class="dish">Battered Cutlets</span></li>
-                            <li><span class="dish">W/ Marsella Sauce</span><span class="price">2.00</span></li>
-                            <li><span class="dish">Pistachio Cutlets</span><span class="price">2.00</span></li>
-                            <li><span class="dish">Capons</span><span class="price">3.50</span></li>
-                            <li><span class="dish">Chicken Rib Steak</span><span class="price">3.50</span></li>
-                            <li><span class="dish">Tilapia Fish</span><span class="price">2.00</span></li>
-                            <li><span class="dish">Salmon Fish</span><span class="price">4.00</span></li>
-                            <li><span class="dish">Beef</span><span class="price">$8 &amp; up</span></li>
-                        </ul>
-                    </div>
-
-                    <!-- STARCH SIDE DISH -->
-                    <div class="weekday-category">
-                        <h5>Starch Side Dish</h5>
-                        <ul>
-                            <li><span class="dish">Mashed Potatoes – choose topping</span></li>
-                            <li><span class="dish">Caramelized Onions / Sweet Potato Chips</span></li>
-                            <li><span class="dish">Tiny Cut Potatoes &amp; Sweet Potatoes</span></li>
-                            <li><span class="dish">Sliced Red &amp; White Potatoes</span></li>
-                            <li><span class="dish">Marble Potatoes</span></li>
-                            <li><span class="dish">Vegetable Orzo</span></li>
-                            <li><span class="dish">Spanish Rice</span></li>
-                            <li><span class="dish">String Beans w/ Almonds</span></li>
-                            <li><span class="dish">String Beans w/ Colored Peppers</span></li>
-                            <li><span class="dish">Sugar Snap Peas w/ Garlic &amp; Sesame Seeds</span></li>
-                            <li><span class="dish">Stir Fry Vegetable</span></li>
-                            <li><span class="dish">Broccoli</span></li>
-                            <li><span class="dish">Mini Vegetables – Pepper, Squash &amp; Carrots</span><span class="price">1.75</span></li>
-                            <li><span class="dish">2 Color Vegetable Kugel</span><span class="price">2.00</span></li>
-                        </ul>
-                    </div>
-
-                    <!-- DESSERTS & EXTRAS -->
-                    <div class="weekday-category" style="grid-column: span 2;">
-                        <h5>Desserts &amp; Beverages</h5>
-                        <div style="display:flex; flex-wrap:wrap; gap:24px;">
-                            <ul style="flex:1;">
-                                <li><span class="dish">Ice Cream w/ Sauce</span></li>
-                                <li><span class="dish">Sorbet w/ Sauce</span></li>
-                                <li><span class="dish">Rosette Ice Cream or Sorbet</span><span class="price">$1</span></li>
-                                <li><span class="dish">Apple Cobbler</span><span class="price">1.75</span></li>
-                                <li><span class="dish">Hot Brownie</span><span class="price">1.75</span></li>
-                                <li><span class="dish">Cut Up Fruits</span><span class="price">1.75</span></li>
-                                <li><span class="dish">Eclair</span><span class="price">2.50</span></li>
-                                <li><span class="dish">Irish Coffee or Tea</span><span class="price">1.75</span></li>
-                            </ul>
-                            <div style="flex:1; min-width:140px;">
-                                <p style="font-weight:700;color:var(--accent);">Deluxe</p>
-                                <p style="font-size:1rem;"><strong>$5 &amp; up</strong></p>
-                            </div>
-                        </div>
+                    <p>From an intimate Shabbos sheva brochos to a full simcha, Rottenberg's Catering brings the
+                       warmth of heimish cooking together with polished, elegant service. Every dish is prepared
+                       fresh, every table is dressed beautifully, and every detail is handled so you can enjoy
+                       your own simcha.</p>
+                    <ul class="checklist">
+                        <li>Complete Shabbos menus — night &amp; day meals</li>
+                        <li>Weekday simcha menus with per-person pricing</li>
+                        <li>Linens &amp; napkins in dozens of colors</li>
+                        <li>Heimish challos available upon request</li>
+                    </ul>
+                    <div style="margin-top:26px; display:flex; gap:12px; flex-wrap:wrap;">
+                        <a href="about.html" class="btn btn--green">More About Us</a>
+                        <a href="tel:+17188536100" class="btn btn--outline">📞 718-853-6100</a>
                     </div>
                 </div>
-                <p class="note">All items subject to availability. Custom orders welcome.</p>
+                <img class="split-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80"
+                     alt="Elegantly plated dish" loading="lazy" style="aspect-ratio:4/4.6;"
+                     onerror="this.style.display='none'">
+            </div>
+        </section>
+
+        <!-- ═══════ OCCASIONS ═══════ -->
+        <section class="section tint">
+            <div class="wrap">
+                <div class="section-title reveal">
+                    <span class="eyebrow">What we cater</span>
+                    <h2>Every occasion, catered with care</h2>
+                    <span class="accent-line"></span>
+                </div>
+                <div class="grid-4">
+                    <div class="card reveal">
+                        <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v3M12 2v3M16 2v3"/><path d="M7 8h10l-1 13H8L7 8z"/><path d="M5 8h14"/></svg></div>
+                        <h3>Shabbos</h3>
+                        <p>Complete night &amp; day meals — from gefilte and soup through cholent, kugel, and dessert. Standard and upgraded options.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="icon-tile gold"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 3l-2 2M12 3l2 2"/><path d="M5 21a7 7 0 0 1 14 0"/><path d="M3 21h18"/></svg></div>
+                        <h3>Simchas</h3>
+                        <p>Sheva brochos, bar mitzvahs, vorts, and kiddushim — menus sized to your crowd and styled to your simcha.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/><path d="M3 13h18"/></svg></div>
+                        <h3>Weekday Events</h3>
+                        <p>A full weekday menu — appetizers, soups, mains, sides, and desserts — with clear per-person upgrade pricing.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="icon-tile gold"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16M6 19V9a6 6 0 0 1 12 0v10"/><path d="M9 13h6"/></svg></div>
+                        <h3>Full Service</h3>
+                        <p>Linens, napkins, and table styling in dozens of colors — including our textured Bark Collection.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ HOW IT WORKS ═══════ -->
+        <section class="section">
+            <div class="wrap">
+                <div class="section-title reveal">
+                    <span class="eyebrow">Simple &amp; stress-free</span>
+                    <h2>How it works</h2>
+                    <span class="accent-line"></span>
+                </div>
+                <div class="grid-3">
+                    <div class="step reveal">
+                        <div class="num">1</div>
+                        <h3>Choose your menu</h3>
+                        <p>Browse the Shabbos and weekday menus, pick your dishes, and choose linen colors — or build your order right on the site.</p>
+                    </div>
+                    <div class="step reveal">
+                        <div class="num">2</div>
+                        <h3>We confirm the details</h3>
+                        <p>We go over your event together — guest count, timing, upgrades, and any special requests — and lock in the plan.</p>
+                    </div>
+                    <div class="step reveal">
+                        <div class="num">3</div>
+                        <h3>Enjoy your simcha</h3>
+                        <p>Everything arrives fresh, beautifully presented, and on time. You sit with your guests — we take care of the rest.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ MENU TEASERS ═══════ -->
+        <section class="section tint">
+            <div class="wrap">
+                <div class="section-title reveal">
+                    <span class="eyebrow">Our menus</span>
+                    <h2>A taste of what we serve</h2>
+                    <span class="accent-line"></span>
+                </div>
+                <div class="grid-3">
+                    <div class="card teaser reveal">
+                        <div class="teaser-top"></div>
+                        <h3>Shabbos Menus</h3>
+                        <ul>
+                            <li>Salmon fish &amp; gefilte</li>
+                            <li>Soup with knaidlech &amp; luckyshen</li>
+                            <li>Chicken cholent w/ kishka</li>
+                            <li>Potato &amp; luckyshen kugel</li>
+                            <li>Capons or chicken rib steak</li>
+                        </ul>
+                        <a href="menu.html#shabbos" class="btn btn--green">Full Shabbos Menu</a>
+                    </div>
+                    <div class="card teaser reveal">
+                        <div class="teaser-top"></div>
+                        <h3>Weekday Menu</h3>
+                        <ul>
+                            <li>Appetizers, soups &amp; fish plates</li>
+                            <li>Cutlets, capons &amp; rib steak</li>
+                            <li>Kugels, rice &amp; garden sides</li>
+                            <li>Ice cream, cobbler &amp; desserts</li>
+                            <li>Per-person upgrade pricing</li>
+                        </ul>
+                        <a href="menu.html#weekday" class="btn btn--green">Full Weekday Menu</a>
+                    </div>
+                    <div class="card teaser reveal">
+                        <div class="teaser-top"></div>
+                        <h3>Linens &amp; Colors</h3>
+                        <ul>
+                            <li>37 linen &amp; napkin colors</li>
+                            <li>Neutrals, jewel tones &amp; classics</li>
+                            <li>Textured Bark Collection</li>
+                            <li>Fabric swatches on request</li>
+                            <li>Styled to match your simcha</li>
+                        </ul>
+                        <a href="linens.html" class="btn btn--green">Browse Colors</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ CTA BAND ═══════ -->
+        <section class="ctaband">
+            <h2>Planning a <em>simcha?</em></h2>
+            <p>Tell us about your event and we'll take it from there — or build your order right now, dish by dish.</p>
+            <div class="cta-row">
+                <a href="order.html" class="btn btn--gold btn--lg">Build Your Order</a>
+                <a href="contact.html" class="btn btn--ghost btn--lg">Contact Us</a>
+            </div>
+            <p class="phone-line">Prefer the phone? Call <a href="tel:+17188536100">718-853-6100</a></p>
+        </section>
+    </main>
+
+    <!-- ═══════ FOOTER ═══════ -->
+    <footer class="foot">
+        <div class="wrap foot-in">
+            <div>
+                <a class="brand" href="index.html">
+                    <svg class="logo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect width="48" height="48" rx="12" fill="#C8963E"/>
+                        <path d="M12 29a12 12 0 0 1 24 0z" fill="#1E5945"/>
+                        <circle cx="24" cy="14.5" r="2" fill="#E8D5B7"/>
+                        <path d="M10 31h28" stroke="#E8D5B7" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                    <span class="name">Rottenberg's <em>Catering</em></span>
+                </a>
+                <p>Premium heimish kosher catering for Shabbos, simchas, and weekday events — serving Brooklyn and the greater New York community.</p>
+            </div>
+            <div>
+                <h4>Explore</h4>
+                <a class="flink" href="about.html">About Us</a>
+                <a class="flink" href="menu.html">Menus</a>
+                <a class="flink" href="linens.html">Linens &amp; Colors</a>
+                <a class="flink" href="order.html">Build Your Order</a>
+                <a class="flink" href="contact.html">Contact</a>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <div class="contact-line">📞 <a href="tel:+17188536100">718-853-6100</a></div>
+                <div class="contact-line">✉️ <a href="mailto:rottenbergscatering@gmail.com">rottenbergscatering@gmail.com</a></div>
+                <div class="contact-line">📍 <span>264 Hewes St, Brooklyn, NY 11211</span></div>
             </div>
         </div>
-    </section>
-
-    <!-- ═══════ COLOR CHART ═══════ -->
-    <section class="section" id="color-chart">
-        <div class="section-title">
-            <h2>Linen &amp; Napkin Colors</h2>
-            <span class="accent-line"></span>
+        <div class="wrap foot-bot">
+            <span>© <span class="js-year">2026</span> Rottenberg's Catering. All rights reserved. · Heimish • Elegant • Kosher</span>
+            <span>Designed &amp; built by <a href="https://bhwebsolutions.com" target="_blank" rel="noopener">BH Web Solutions</a></span>
         </div>
-        <p class="section-subtitle">100% Polyester – Basic Polyester Collection · Available colors only</p>
+    </footer>
 
-        <div class="card" style="padding: 30px 24px;">
-            <div class="color-grid">
-                <!-- Neutrals / Yellows / Browns -->
-                <div class="color-column-label">Neutrals · Yellows · Browns</div>
-                <div class="color-swatch" onclick="openColorModal('#FFFFF0', 'Ivory')"><div class="dot" style="background:#FFFFF0;"></div><span class="name">Ivory</span></div>
-                <div class="color-swatch" onclick="openColorModal('#D2B48C', 'Tan')"><div class="dot" style="background:#D2B48C;"></div><span class="name">Tan</span></div>
-                <div class="color-swatch" onclick="openColorModal('#C19A6B', 'Camel')"><div class="dot" style="background:#C19A6B;"></div><span class="name">Camel</span></div>
-                <div class="color-swatch" onclick="openColorModal('#FBEC5D', 'Maize')"><div class="dot" style="background:#FBEC5D;"></div><span class="name">Maize</span></div>
-                <div class="color-swatch" onclick="openColorModal('#FFF700', 'Lemon')"><div class="dot" style="background:#FFF700;"></div><span class="name">Lemon</span></div>
-                <div class="color-swatch" onclick="openColorModal('#DAA520', 'Goldenrod')"><div class="dot" style="background:#DAA520;"></div><span class="name">Goldenrod</span></div>
-                <div class="color-swatch" onclick="openColorModal('#808000', 'Olive')"><div class="dot" style="background:#808000;"></div><span class="name">Olive</span></div>
-                <div class="color-swatch" onclick="openColorModal('#FFCBA4', 'Peach')"><div class="dot" style="background:#FFCBA4;"></div><span class="name">Peach</span></div>
-                <div class="color-swatch" onclick="openColorModal('#FF7F50', 'Coral')"><div class="dot" style="background:#FF7F50;"></div><span class="name">Coral</span></div>
-                <div class="color-swatch" onclick="openColorModal('#FFA500', 'Orange')"><div class="dot" style="background:#FFA500;"></div><span class="name">Orange</span></div>
-                <div class="color-swatch" onclick="openColorModal('#CC5500', 'Burnt Orange')"><div class="dot" style="background:#CC5500;"></div><span class="name">Burnt Orange</span></div>
-                <div class="color-swatch" onclick="openColorModal('#7B3F00', 'Chocolate')"><div class="dot" style="background:#7B3F00;"></div><span class="name">Chocolate</span></div>
-
-                <!-- Greens / Blues -->
-                <div class="color-column-label">Greens · Blues</div>
-                <div class="color-swatch" onclick="openColorModal('#98FF98', 'Mint')"><div class="dot" style="background:#98FF98;"></div><span class="name">Mint</span></div>
-                <div class="color-swatch" onclick="openColorModal('#008080', 'Teal')"><div class="dot" style="background:#008080;"></div><span class="name">Teal</span></div>
-                <div class="color-swatch" onclick="openColorModal('#32CD32', 'Lime')"><div class="dot" style="background:#32CD32;"></div><span class="name">Lime</span></div>
-                <div class="color-swatch" onclick="openColorModal('#4CBB17', 'Kelly')"><div class="dot" style="background:#4CBB17;"></div><span class="name">Kelly</span></div>
-                <div class="color-swatch" onclick="openColorModal('#355E3B', 'Hunter')"><div class="dot" style="background:#355E3B;"></div><span class="name">Hunter</span></div>
-                <div class="color-swatch" onclick="openColorModal('#228B22', 'Forest')"><div class="dot" style="background:#228B22;"></div><span class="name">Forest</span></div>
-                <div class="color-swatch" onclick="openColorModal('#ADD8E6', 'Light Blue')"><div class="dot" style="background:#ADD8E6;"></div><span class="name">Light Blue</span></div>
-                <div class="color-swatch" onclick="openColorModal('#4169E1', 'Royal')"><div class="dot" style="background:#4169E1;"></div><span class="name">Royal</span></div>
-                <div class="color-swatch" onclick="openColorModal('#000080', 'Navy')"><div class="dot" style="background:#000080;"></div><span class="name">Navy</span></div>
-                <div class="color-swatch" onclick="openColorModal('#191970', 'Midnight')"><div class="dot" style="background:#191970;"></div><span class="name">Midnight</span></div>
-
-                <!-- Pinks / Reds / Purples / Greys -->
-                <div class="color-column-label">Pinks · Reds · Purples · Greys</div>
-                <div class="color-swatch" onclick="openColorModal('#FFB6C1', 'Light Pink')"><div class="dot" style="background:#FFB6C1;"></div><span class="name">Light Pink</span></div>
-                <div class="color-swatch" onclick="openColorModal('#FFB3DE', 'Pink Balloon')"><div class="dot" style="background:#FFB3DE;"></div><span class="name">Pink Balloon</span></div>
-                <div class="color-swatch" onclick="openColorModal('#E0B0FF', 'Mauve')"><div class="dot" style="background:#E0B0FF;"></div><span class="name">Mauve</span></div>
-                <div class="color-swatch" onclick="openColorModal('#FF69B4', 'Hot Pink')"><div class="dot" style="background:#FF69B4;"></div><span class="name">Hot Pink</span></div>
-                <div class="color-swatch" onclick="openColorModal('#E30B5C', 'Raspberry')"><div class="dot" style="background:#E30B5C;"></div><span class="name">Raspberry</span></div>
-                <div class="color-swatch" onclick="openColorModal('#3D0734', 'Aubergine')"><div class="dot" style="background:#3D0734;"></div><span class="name">Aubergine</span></div>
-                <div class="color-swatch" onclick="openColorModal('#800020', 'Burgundy')"><div class="dot" style="background:#800020;"></div><span class="name">Burgundy</span></div>
-                <div class="color-swatch" onclick="openColorModal('#DC143C', 'Holiday Red')"><div class="dot" style="background:#DC143C;"></div><span class="name">Holiday Red</span></div>
-                <div class="color-swatch" onclick="openColorModal('#C8A2C8', 'Lilac')"><div class="dot" style="background:#C8A2C8;"></div><span class="name">Lilac</span></div>
-                <div class="color-swatch" onclick="openColorModal('#8E4585', 'Plum')"><div class="dot" style="background:#8E4585;"></div><span class="name">Plum</span></div>
-                <div class="color-swatch" onclick="openColorModal('#800080', 'Purple')"><div class="dot" style="background:#800080;"></div><span class="name">Purple</span></div>
-                <div class="color-swatch" onclick="openColorModal('#C0C0C0', 'Silver')"><div class="dot" style="background:#C0C0C0;"></div><span class="name">Silver</span></div>
-                <div class="color-swatch" onclick="openColorModal('#36454F', 'Charcoal')"><div class="dot" style="background:#36454F;"></div><span class="name">Charcoal</span></div>
-                <div class="color-swatch" onclick="openColorModal('#000000', 'Black')"><div class="dot" style="background:#000000;"></div><span class="name">Black</span></div>
-                <div class="color-swatch" onclick="openColorModal('#FFFFFF', 'White')"><div class="dot" style="background:#FFFFFF;"></div><span class="name">White</span></div>
-            </div>
-            <p class="note" style="text-align:center;margin-top:20px;">
-                Click any color to enlarge.<br>Actual fabric swatches available for viewing upon request.
-            </p>
-        </div>
-    </section>
-
-    <!--  Color Modal Overlay -->
-    <div id="colorModal" class="color-modal" onclick="closeColorModal()">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <div class="big-dot" id="modalBigDot" style="background:#fff;"></div>
-            <div class="modal-name" id="modalName"></div>
-            <button class="close-btn" onclick="closeColorModal()">Close</button>
-        </div>
-    </div>
-
-    <!-- ═══════ BARK COLLECTION ═══════ -->
-    <section class="section" id="bark">
-        <div class="section-title">
-            <h2>Bark Collection – Colors with Designs</h2>
-            <span class="accent-line"></span>
-        </div>
-        <div class="card" style="text-align:center;">
-            <h3>🌿 Textured Bark Fabrics</h3>
-            <img src="bark.png" alt="Bark Collection Fabric Design" style="max-width:100%; height:auto; border-radius: 12px; margin: 20px 0; box-shadow: var(--shadow-md);" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <p style="display:none; color:var(--text-light);">Your bark collection image will appear here once you add the file to the repository.</p>
-            <p style="color:var(--text-light);">A premium selection of linen patterns inspired by natural bark textures. Available in complementary colors to elevate your table setting.</p>
-            <p class="note">Inquire for swatch samples and availability.</p>
-        </div>
-    </section>
-
-    <!-- ═══════ CONTACT FORM ═══════ -->
-    <section class="contact-section" id="contact">
-        <h2>Contact Rottenberg's Catering</h2>
-        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwvykbbj" method="POST">
-            <!-- HONEYPOT FIELD: hidden from humans, visible to bots. Formspree will reject submissions with a value. -->
-            <input type="text" name="_gotcha" class="honeypot-field" tabindex="-1" autocomplete="off">
-
-            <div class="form-success" id="formSuccess">✅ Thank you! Your message has been sent. We'll reply within 24 hours.</div>
-
-            <div class="form-group">
-                <label for="name">Your Name *</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="_replyto" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone">
-            </div>
-            <div class="form-group">
-                <label for="event">Event Type</label>
-                <select id="event" name="event">
-                    <option value="">-- Please select --</option>
-                    <option value="Shabbos">Shabbos</option>
-                    <option value="Weekday Simcha">Weekday Simcha</option>
-                    <option value="Corporate">Corporate Event</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="message">Message *</label>
-                <textarea id="message" name="message" placeholder="Tell us about your event, number of guests, preferred menu options..." required></textarea>
-            </div>
-            <div style="text-align: center;">
-                <button type="submit" class="btn-submit">Send Message</button>
-            </div>
-        </form>
-
-        <div class="contact-info-compact">
-            <p>📞 <a href="tel:+17188536100">718-853-6100</a> &nbsp;|&nbsp;
-            ✉️ <a href="mailto:rottenbergscatering@gmail.com">rottenbergscatering@gmail.com</a></p>
-            <p>📍 264 Hewes St, Brooklyn, NY 11211</p>
-        </div>
-        <div class="footer-note">
-            &copy; <span id="year"></span> Rottenberg's Catering. All rights reserved. &nbsp;|&nbsp; Heimish • Elegant • Kosher<br>
-            Designed &amp; built by <a href="https://bhwebsolutions.com" target="_blank" rel="noopener">BH Web Solutions</a>
-        </div>
-    </section>
-
-    <!-- ═══════ BACK TO TOP ═══════ -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
-
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        const backToTopBtn = document.getElementById('backToTop');
-        function toggleBackToTop() {
-            if (window.scrollY > 500) {
-                backToTopBtn.classList.add('visible');
-            } else {
-                backToTopBtn.classList.remove('visible');
-            }
-        }
-        window.addEventListener('scroll', toggleBackToTop, { passive: true });
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        toggleBackToTop();
-
-        const sections = document.querySelectorAll('section[id], header[id]');
-        const navLinks = document.querySelectorAll('.nav-bar a');
-        function updateActiveNav() {
-            let currentId = '';
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top <= 120) currentId = section.id;
-            });
-            navLinks.forEach(link => {
-                link.classList.remove('nav-active');
-                if (link.getAttribute('href') === '#' + currentId) link.classList.add('nav-active');
-            });
-        }
-        window.addEventListener('scroll', updateActiveNav, { passive: true });
-
-        const activeStyle = document.createElement('style');
-        activeStyle.textContent = ".nav-bar a.nav-active { background: var(--gold-pale); color: var(--accent); border-color: var(--gold-light); font-weight: 600; }";
-        document.head.appendChild(activeStyle);
-
-        const modal = document.getElementById('colorModal');
-        const bigDot = document.getElementById('modalBigDot');
-        const modalName = document.getElementById('modalName');
-        function openColorModal(color, name) {
-            bigDot.style.background = color;
-            modalName.textContent = name;
-            modal.classList.add('active');
-        }
-        function closeColorModal() {
-            modal.classList.remove('active');
-        }
-
-        const contactForm = document.getElementById('contactForm');
-        const formSuccess = document.getElementById('formSuccess');
-        const honeypotField = contactForm.querySelector('input[name="_gotcha"]');
-
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            // Block if honeypot filled (double safety for bots that ignore Formspree server-side)
-            if (honeypotField && honeypotField.value.trim() !== '') {
-                contactForm.reset();
-                return;
-            }
-
-            const formData = new FormData(contactForm);
-            try {
-                const response = await fetch(contactForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
-                });
-                if (response.ok) {
-                    contactForm.reset();
-                    formSuccess.style.display = 'block';
-                    setTimeout(() => { formSuccess.style.display = 'none'; }, 6000);
-                } else {
-                    alert('Oops! Something went wrong. Please try again.');
-                }
-            } catch (error) {
-                alert('Network error. Please check your connection.');
-            }
-        });
-    </script>
-    <script>
-      (function(){
-        var els = document.querySelectorAll('.section-title, .card, .color-grid, .contact-form, .contact-info-compact');
-        els.forEach(function(el){ el.classList.add('reveal'); });
-        if (!('IntersectionObserver' in window)) { els.forEach(function(el){ el.classList.add('in'); }); return; }
-        var io = new IntersectionObserver(function(entries){
-          entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-        els.forEach(function(el){ io.observe(el); });
-      })();
-    </script>
+    <script src="assets/site.js"></script>
 </body>
 </html>
